@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Logo from "../components/Logo";
 import { submitContactForm, showFormMessage } from "../utils/formSubmission";
 
@@ -433,15 +434,17 @@ export default function Home() {
                 }`}
               >
                 {/* Image Section */}
-                <div className="relative w-full lg:w-1/2 h-[250px] sm:h-[300px] lg:h-[400px] bg-cover bg-center bg-no-repeat bg-gray-800"
-                  style={{
-                    backgroundImage: `url('${card.backgroundImage}')`
-                  }}
-                  onError={(e) => {
-                    console.error('Failed to load image:', card.backgroundImage);
-                    console.error('Image element:', e.target);
-                  }}
-                >
+                <div className="relative w-full lg:w-1/2 h-[250px] sm:h-[300px] lg:h-[400px] overflow-hidden">
+                  <Image
+                    src={card.backgroundImage}
+                    alt={card.title}
+                    fill
+                    className="object-cover"
+                    onError={(e) => {
+                      console.error('Failed to load image:', card.backgroundImage);
+                      console.error('Image element:', e.target);
+                    }}
+                  />
                   {/* Fade effect to background */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/30 to-black/60"
                     style={{
