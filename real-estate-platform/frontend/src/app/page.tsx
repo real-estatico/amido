@@ -68,6 +68,7 @@ export default function Home() {
   // Slideshow images - automatically includes all background images
   const slideshowImages = getAllBackgroundImages();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Slideshow effect
   useEffect(() => {
@@ -178,15 +179,17 @@ export default function Home() {
       {/* Navigation */}
       <nav className="bg-transparent backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
+          <div className="flex justify-between items-center h-16 md:h-20">
             <div className="flex items-center">
               <Link href="#" className="cursor-pointer">
-                <div className="font-luxury-display text-2xl text-white tracking-wider">
+                <div className="font-luxury-display text-xl md:text-2xl text-white tracking-wider">
                   AMIDO
                 </div>
               </Link>
             </div>
-            <div className="flex items-center space-x-12 space-x-reverse">
+            
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center space-x-12 space-x-reverse">
               <Link href="#features" className="text-white/70 hover:text-white text-sm font-luxury-body transition-all duration-300 tracking-wider uppercase">
                 למה לבחור ב-Amido
               </Link>
@@ -206,7 +209,72 @@ export default function Home() {
                 הרשמה
               </Link>
             </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden text-white/70 hover:text-white transition-colors duration-300"
+              aria-label="Toggle mobile menu"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {isMobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
           </div>
+
+          {/* Mobile Navigation Menu */}
+          {isMobileMenuOpen && (
+            <div className="lg:hidden bg-black/90 backdrop-blur-sm border-t border-white/10">
+              <div className="px-2 pt-2 pb-3 space-y-1">
+                <Link 
+                  href="#features" 
+                  className="block px-3 py-2 text-white/70 hover:text-white text-sm font-luxury-body transition-all duration-300 tracking-wider uppercase"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  למה לבחור ב-Amido
+                </Link>
+                <Link 
+                  href="#vision" 
+                  className="block px-3 py-2 text-white/70 hover:text-white text-sm font-luxury-body transition-all duration-300 tracking-wider uppercase"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  החזון שלנו
+                </Link>
+                <Link 
+                  href="#solution" 
+                  className="block px-3 py-2 text-white/70 hover:text-white text-sm font-luxury-body transition-all duration-300 tracking-wider uppercase"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  הפתרון שלנו
+                </Link>
+                <Link 
+                  href="#about" 
+                  className="block px-3 py-2 text-white/70 hover:text-white text-sm font-luxury-body transition-all duration-300 tracking-wider uppercase"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  אודותינו
+                </Link>
+                <Link 
+                  href="#contact" 
+                  className="block px-3 py-2 text-white/70 hover:text-white text-sm font-luxury-body transition-all duration-300 tracking-wider uppercase"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  צור קשר
+                </Link>
+                <Link 
+                  href="/register" 
+                  className="block px-3 py-2 text-white/70 hover:text-white text-sm font-luxury-body transition-all duration-300 tracking-wider uppercase border border-white/30 rounded hover:bg-white/10"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  הרשמה
+                </Link>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
@@ -219,14 +287,14 @@ export default function Home() {
             variants={fadeInUp}
             className="mb-12"
           >
-            <h1 className="text-8xl md:text-9xl font-bold text-white mb-4 font-luxury-display tracking-tight">
+            <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold text-white mb-4 font-luxury-display tracking-tight">
               AMIDO
             </h1>
-            <h2 className="text-2xl md:text-3xl font-light text-white/90 mb-12 font-luxury-body tracking-wider uppercase">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-white/90 mb-8 md:mb-12 font-luxury-body tracking-wider uppercase">
               קבוצת נדל״ן
             </h2>
-            <div className="w-24 h-0.5 mx-auto mb-12 bg-white/60"></div>
-            <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed font-luxury-body">
+            <div className="w-16 sm:w-20 md:w-24 h-0.5 mx-auto mb-8 md:mb-12 bg-white/60"></div>
+            <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed font-luxury-body px-4">
               הצטרפו לקהילה סודית של משקיעים נבחרים
             </p>
           </motion.div>
@@ -243,13 +311,13 @@ export default function Home() {
             variants={fadeInUp}
             className="text-center mb-24"
           >
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-8 font-luxury-display">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 md:mb-8 font-luxury-display">
               למה לבחור ב-Amido
             </h2>
-            <div className="w-32 h-1 mx-auto mb-8" style={{
+            <div className="w-24 sm:w-28 md:w-32 h-1 mx-auto mb-6 md:mb-8" style={{
               background: 'linear-gradient(to right, transparent 0%, #991b1b 20%, #991b1b 80%, transparent 100%)'
             }}></div>
-            <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed font-luxury-body">
+            <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed font-luxury-body px-4">
               גישה להשקעות נדלן יוקרה שהיו בעבר מחוץ להישג יד - עכשיו בהישג ידכם
             </p>
           </motion.div>
@@ -265,12 +333,12 @@ export default function Home() {
               <motion.div 
                 key={index}
                 variants={staggerItem}
-                className={`flex flex-col md:flex-row items-center min-h-[400px] ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                className={`flex flex-col lg:flex-row items-center min-h-[300px] sm:min-h-[350px] lg:min-h-[400px] ${
+                  index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
                 }`}
               >
                 {/* Image Section */}
-                <div className="relative w-full md:w-1/2 h-[300px] md:h-[400px] bg-cover bg-center bg-no-repeat"
+                <div className="relative w-full lg:w-1/2 h-[250px] sm:h-[300px] lg:h-[400px] bg-cover bg-center bg-no-repeat"
                   style={{
                     backgroundImage: `url('${card.backgroundImage}')`
                   }}
@@ -286,11 +354,11 @@ export default function Home() {
                 </div>
                 
                 {/* Text Section */}
-                <div className="w-full md:w-1/2 p-12 bg-slate-900 flex flex-col justify-center">
-                  <h3 className="text-3xl font-bold text-white mb-6">
+                <div className="w-full lg:w-1/2 p-6 sm:p-8 lg:p-12 bg-slate-900 flex flex-col justify-center">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
                     {card.title}
                   </h3>
-                  <p className="text-lg text-white/90 leading-relaxed">
+                  <p className="text-base sm:text-lg text-white/90 leading-relaxed">
                     {card.description}
                   </p>
                 </div>
@@ -578,13 +646,13 @@ export default function Home() {
             variants={fadeInUp}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-luxury-display">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 font-luxury-display">
               צור קשר
             </h2>
-            <div className="w-32 h-1 mx-auto mb-6" style={{
+            <div className="w-24 sm:w-28 md:w-32 h-1 mx-auto mb-4 sm:mb-6" style={{
               background: 'linear-gradient(to right, transparent 0%, #991b1b 20%, #991b1b 80%, transparent 100%)'
             }}></div>
-            <p className="text-xl text-white/90">
+            <p className="text-lg sm:text-xl text-white/90 px-4">
               מוכנים להתחיל את המסע שלכם להשקעות נדלן מוצלחות?
             </p>
           </motion.div>
@@ -596,7 +664,7 @@ export default function Home() {
             variants={fadeInUp}
             className="max-w-2xl mx-auto"
           >
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8">
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 sm:p-6 lg:p-8">
               <form id="contact-form" onSubmit={handleContactFormSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="contact-name" className="block text-white mb-2">שם מלא</label>
@@ -605,7 +673,7 @@ export default function Home() {
                     id="contact-name" 
                     name="name"
                     required
-                    className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:ring-2 focus:ring-red-900 focus:border-red-900 transition-all duration-300"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:ring-2 focus:ring-red-900 focus:border-red-900 transition-all duration-300 text-sm sm:text-base"
                     placeholder="הכנס את שמך המלא"
                   />
                 </div>
@@ -616,7 +684,7 @@ export default function Home() {
                     id="contact-email" 
                     name="email"
                     required
-                    className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:ring-2 focus:ring-red-900 focus:border-red-900 transition-all duration-300"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:ring-2 focus:ring-red-900 focus:border-red-900 transition-all duration-300 text-sm sm:text-base"
                     placeholder="הכנס את כתובת האימייל שלך"
                   />
                 </div>
@@ -627,7 +695,7 @@ export default function Home() {
                     id="contact-phone" 
                     name="phone"
                     required
-                    className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:ring-2 focus:ring-red-900 focus:border-red-900 transition-all duration-300"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:ring-2 focus:ring-red-900 focus:border-red-900 transition-all duration-300 text-sm sm:text-base"
                     placeholder="הכנס את מספר הטלפון שלך"
                   />
                 </div>
@@ -637,14 +705,14 @@ export default function Home() {
                     id="contact-message" 
                     name="message"
                     rows={4}
-                    className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:ring-2 focus:ring-red-900 focus:border-red-900 transition-all duration-300"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:ring-2 focus:ring-red-900 focus:border-red-900 transition-all duration-300 text-sm sm:text-base"
                     placeholder="כתוב את ההודעה שלך כאן (אופציונלי)"
                   ></textarea>
                 </div>
                 <button 
-                  type="submit"
+                  type="submit" 
                   id="contact-submit"
-                  className="w-full bg-red-900 text-white px-8 py-4 text-lg font-luxury-accent hover:bg-red-950 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-red-900 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-luxury-accent hover:bg-red-950 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <span id="contact-submit-text">שלח הודעה</span>
                   <span id="contact-submit-loading" className="hidden">שולח...</span>
