@@ -454,19 +454,9 @@ export default function Home() {
       </section>
 
 
-      {/* Building Background - Fixed for all lower sections except hero */}
-      <div 
-        className="fixed inset-0 bg-no-repeat bg-center opacity-40 pointer-events-none"
-        style={{
-          backgroundImage: `url('/buildings-background/black-background .jpg')`,
-          backgroundSize: 'contain',
-          zIndex: 5,
-          top: '100vh' // Start after hero section
-        }}
-      ></div>
 
       {/* Solution Section (Issue vs Solution layout with white borders) */}
-      <section id="solution" className="py-24 bg-black/70 relative z-10">
+      <section id="solution" className="py-24 bg-black relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial="hidden"
@@ -637,7 +627,7 @@ export default function Home() {
       </section>
 
       {/* About Us Section */}
-      <section id="about" className="py-24 bg-black/70 relative z-10">
+      <section id="about" className="py-24 bg-black relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial="hidden"
@@ -681,7 +671,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-black/70 relative z-10">
+      <section id="contact" className="py-24 bg-black relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial="hidden"
