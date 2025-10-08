@@ -461,7 +461,7 @@ export default function Home() {
         <div 
           className="absolute bg-no-repeat opacity-25 pointer-events-none"
           style={{
-            backgroundImage: `url('${typeof window !== 'undefined' && window.location.hostname === 'real-estatico.github.io' ? '/amido/buildings-background/black-background .jpg' : '/buildings-background/black-background .jpg'}')`,
+            backgroundImage: `url('${typeof window !== 'undefined' && window.location.hostname === 'real-estatico.github.io' ? '/amido/buildings-background/ChatGPT Image Oct 8, 2025, 11_02_37 PM.png' : '/buildings-background/ChatGPT Image Oct 8, 2025, 11_02_37 PM.png'}')`,
             backgroundSize: 'contain',
             backgroundPosition: 'center bottom',
             width: '100%',
