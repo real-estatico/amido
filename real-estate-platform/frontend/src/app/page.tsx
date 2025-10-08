@@ -8,13 +8,14 @@ import { submitContactForm, showFormMessage } from "../utils/formSubmission";
 
 // Function to get all background images dynamically
 const getAllBackgroundImages = () => {
-  // List of background images from /public/background/ folder
+  // List of background images from /public/background/ and /public/buildings-background/ folders
   const backgroundImages = [
     '/background/pexels-brett-sayles-2606383.jpg',
     '/background/pexels-expect-best-79873-351262.jpg',
     '/background/pexels-pixabay-259950.jpg',
     '/background/pexels-sevenstormphotography-409842.jpg',
-    '/background/pexels-sevenstormphotography-425122.jpg'
+    '/background/pexels-sevenstormphotography-425122.jpg',
+    '/buildings-background/transparent-city-skyline-modern-skyscraper-with-glass-and-steel-glowing-bl6605ed5809f073.61243497.webp'
   ];
   
   return backgroundImages;
