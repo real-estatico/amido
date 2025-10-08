@@ -429,7 +429,7 @@ export default function Home() {
               <motion.div 
                 key={index}
                 variants={staggerItem}
-                className={`flex flex-col lg:flex-row items-center min-h-[300px] sm:min-h-[350px] lg:min-h-[400px] ${
+                className={`flex flex-col lg:flex-row items-center min-h-[300px] sm:min-h-[350px] lg:min-h-[400px] gap-8 lg:gap-16 ${
                   index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
                 }`}
               >
