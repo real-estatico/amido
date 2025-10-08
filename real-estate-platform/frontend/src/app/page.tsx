@@ -296,7 +296,8 @@ export default function Home() {
             </h2>
             <div className="w-16 sm:w-20 md:w-24 h-0.5 mx-auto mb-8 md:mb-12 bg-white/60"></div>
             <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed font-luxury-body px-4">
-              הצטרפו לקהילה סודית של משקיעים נבחרים
+              הצטרפו לקהילה רחבה של משקיעים נבחרים
+              תהנו מהנחות משמעותיות, נתאים יחודיים ואירועים פרטיים יוקרתיים
             </p>
           </motion.div>
         </div>
