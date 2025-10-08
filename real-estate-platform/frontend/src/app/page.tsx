@@ -223,6 +223,14 @@ export default function Home() {
       `${prefix}/features/pexels-pixabay-358530.jpg`, 
       `${prefix}/features/pexels-sevenstormphotography-443383.jpg`
     ];
+    
+    // Debug logging
+    if (typeof window !== 'undefined') {
+      console.log('Features images paths:', featuresImages);
+      console.log('Is production:', isProduction);
+      console.log('Prefix:', prefix);
+    }
+    
     return featuresImages;
   };
 
@@ -429,6 +437,10 @@ export default function Home() {
                   style={{
                     backgroundImage: `url('${card.backgroundImage}')`
                   }}
+                  onError={(e) => {
+                    console.error('Failed to load image:', card.backgroundImage);
+                    console.error('Image element:', e.target);
+                  }}
                 >
                   {/* Fade effect to background */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/30 to-black/60"
@@ -463,7 +475,7 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: false, amount: 0.1 }}
             variants={fadeInUp}
-            className="text-center mb-20"
+            className="text-center mb-12"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-luxury-display">
               החזון שלנו
@@ -482,7 +494,7 @@ export default function Home() {
               whileInView="visible"
               viewport={{ once: false, amount: 0.1 }}
               variants={fadeInUp}
-              className="relative bg-black/50 backdrop-blur-sm p-12 min-h-[500px] flex items-center"
+              className="relative bg-black/50 backdrop-blur-sm p-8 min-h-[350px] flex items-center"
             >
               
               {/* Content */}
@@ -508,17 +520,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Building Background closer to Vision section */}
+      {/* Building Background with more space */}
       <div 
-        className="relative bg-no-repeat opacity-40 pointer-events-none py-12"
+        className="relative bg-no-repeat pointer-events-none py-24 mx-auto -mt-8"
         style={{
           backgroundImage: `url('${typeof window !== 'undefined' && window.location.hostname === 'real-estatico.github.io' ? '/amido/buildings-background/ChatGPT Image Oct 8, 2025, 11_02_37 PM.png' : '/buildings-background/ChatGPT Image Oct 8, 2025, 11_02_37 PM.png'}')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          width: '100vw',
-          height: '300px',
-          left: '50%',
-          transform: 'translateX(-50%)'
+          width: '60%',
+          height: '400px',
+          zIndex: 20
         }}
       ></div>
 
