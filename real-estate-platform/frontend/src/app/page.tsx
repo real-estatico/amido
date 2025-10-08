@@ -10,11 +10,11 @@ import { submitContactForm, showFormMessage } from "../utils/formSubmission";
 const getAllBackgroundImages = () => {
   // List of background images from /public/background/ folder
   const backgroundImages = [
-    '/background/pexels-brett-sayles-2606383.jpg',
-    '/background/pexels-expect-best-79873-351262.jpg',
-    '/background/pexels-pixabay-259950.jpg',
-    '/background/pexels-sevenstormphotography-409842.jpg',
-    '/background/pexels-sevenstormphotography-425122.jpg'
+    '/amido/background/pexels-brett-sayles-2606383.jpg',
+    '/amido/background/pexels-expect-best-79873-351262.jpg',
+    '/amido/background/pexels-pixabay-259950.jpg',
+    '/amido/background/pexels-sevenstormphotography-409842.jpg',
+    '/amido/background/pexels-sevenstormphotography-425122.jpg'
   ];
   
   return backgroundImages;
@@ -211,9 +211,9 @@ export default function Home() {
   const getFeaturesImages = () => {
     // List of available features images - automatically uses first 3 images from /features/ folder
     const featuresImages = [
-      "/features/pexels-brett-sayles-2606383.jpg",
-      "/features/pexels-pixabay-358530.jpg", 
-      "/features/pexels-sevenstormphotography-443383.jpg"
+      "/amido/features/pexels-brett-sayles-2606383.jpg",
+      "/amido/features/pexels-pixabay-358530.jpg", 
+      "/amido/features/pexels-sevenstormphotography-443383.jpg"
     ];
     return featuresImages;
   };
