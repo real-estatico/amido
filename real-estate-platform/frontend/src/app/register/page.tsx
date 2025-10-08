@@ -127,7 +127,9 @@ export default function Register() {
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-8 font-luxury-display">
               הצטרפות ל-Amido Group
             </h1>
-            <div className="bg-slate-800/50 backdrop-blur-sm shadow-2xl border border-white/20 p-12">
+            
+            {/* Welcome Text - Outside Card */}
+            <div className="mb-16">
               <p className="text-xl text-white leading-relaxed mb-6 font-luxury-body">
                 ברוכים הבאים ל - amido group.
               </p>
@@ -140,11 +142,11 @@ export default function Register() {
             </div>
           </div>
 
-          {/* Registration Form */}
-          <div className="bg-slate-800/50 backdrop-blur-sm shadow-2xl border border-white/20 p-12">
+          {/* Registration Form - Classic Design */}
+          <div className="bg-white/5 backdrop-blur-sm border-2 border-white/30 rounded-2xl p-8 shadow-2xl">
             <form onSubmit={handleSubmit} className="space-y-12">
               {/* Personal Information Section */}
-              <div className="space-y-8">
+              <div className="space-y-8 border border-white/20 rounded-xl p-8 bg-white/5">
                 <h2 className="text-3xl font-bold text-white mb-8 font-luxury-display">
                   פרטים אישיים
                 </h2>
@@ -219,7 +221,7 @@ export default function Register() {
               </div>
 
               {/* Investment Experience Section */}
-              <div className="space-y-8">
+              <div className="space-y-8 border border-white/20 rounded-xl p-8 bg-white/5">
                 <h2 className="text-3xl font-bold text-white mb-8 font-luxury-display">
                   ניסיון השקעות
                 </h2>
@@ -284,7 +286,7 @@ export default function Register() {
               </div>
 
               {/* Investment Preferences Section */}
-              <div className="space-y-8">
+              <div className="space-y-8 border border-white/20 rounded-xl p-8 bg-white/5">
                 <h2 className="text-3xl font-bold text-white mb-8 font-luxury-display">
                   העדפות השקעה
                 </h2>
@@ -330,7 +332,7 @@ export default function Register() {
               </div>
 
               {/* Investment Goals Section */}
-              <div className="space-y-8">
+              <div className="space-y-8 border border-white/20 rounded-xl p-8 bg-white/5">
                 <h2 className="text-3xl font-bold text-white mb-8 font-luxury-display">
                   מטרות השקעה
                 </h2>
@@ -417,7 +419,7 @@ export default function Register() {
               </div>
 
               {/* Community Interest Section */}
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+              <div className="border border-white/20 rounded-xl p-8 bg-white/5">
                 <h3 className="text-2xl font-bold text-white mb-6 font-luxury-display text-center">
                   קהילה מובילה
                 </h3>
