@@ -457,6 +457,18 @@ export default function Home() {
 
       {/* Vision Section (with gray background, no image, no borders) */}
       <section id="vision" className="py-48 bg-black relative z-20">
+        {/* Building Background for Vision Section */}
+        <div 
+          className="absolute inset-0 bg-no-repeat bg-center opacity-30 pointer-events-none"
+          style={{
+            backgroundImage: `url('/buildings-background/black-background .jpg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            width: '100vw',
+            left: '50%',
+            transform: 'translateX(-50%)'
+          }}
+        ></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial="hidden"
