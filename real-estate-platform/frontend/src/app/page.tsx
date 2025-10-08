@@ -8,13 +8,17 @@ import { submitContactForm, showFormMessage } from "../utils/formSubmission";
 
 // Function to get all background images dynamically
 const getAllBackgroundImages = () => {
+  // Check if we're on GitHub Pages (production) or local development
+  const isProduction = typeof window !== 'undefined' && window.location.hostname === 'real-estatico.github.io';
+  const prefix = isProduction ? '/amido' : '';
+  
   // List of background images from /public/background/ folder
   const backgroundImages = [
-    '/amido/background/pexels-brett-sayles-2606383.jpg',
-    '/amido/background/pexels-expect-best-79873-351262.jpg',
-    '/amido/background/pexels-pixabay-259950.jpg',
-    '/amido/background/pexels-sevenstormphotography-409842.jpg',
-    '/amido/background/pexels-sevenstormphotography-425122.jpg'
+    `${prefix}/background/pexels-brett-sayles-2606383.jpg`,
+    `${prefix}/background/pexels-expect-best-79873-351262.jpg`,
+    `${prefix}/background/pexels-pixabay-259950.jpg`,
+    `${prefix}/background/pexels-sevenstormphotography-409842.jpg`,
+    `${prefix}/background/pexels-sevenstormphotography-425122.jpg`
   ];
   
   return backgroundImages;
@@ -209,11 +213,15 @@ export default function Home() {
 
   // Function to get features images dynamically
   const getFeaturesImages = () => {
+    // Check if we're on GitHub Pages (production) or local development
+    const isProduction = typeof window !== 'undefined' && window.location.hostname === 'real-estatico.github.io';
+    const prefix = isProduction ? '/amido' : '';
+    
     // List of available features images - automatically uses first 3 images from /features/ folder
     const featuresImages = [
-      "/amido/features/pexels-brett-sayles-2606383.jpg",
-      "/amido/features/pexels-pixabay-358530.jpg", 
-      "/amido/features/pexels-sevenstormphotography-443383.jpg"
+      `${prefix}/features/pexels-brett-sayles-2606383.jpg`,
+      `${prefix}/features/pexels-pixabay-358530.jpg`, 
+      `${prefix}/features/pexels-sevenstormphotography-443383.jpg`
     ];
     return featuresImages;
   };
