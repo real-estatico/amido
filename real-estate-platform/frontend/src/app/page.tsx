@@ -91,7 +91,7 @@ export default function Home() {
       name: formData.get('name') as string,
       email: formData.get('email') as string,
       phone: formData.get('phone') as string,
-      company: formData.get('company') as string,
+      company: '', // Company field removed
       message: formData.get('message') as string,
     };
 
@@ -618,23 +618,14 @@ export default function Home() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="contact-phone" className="block text-white mb-2">טלפון</label>
+                  <label htmlFor="contact-phone" className="block text-white mb-2">טלפון *</label>
                   <input 
                     type="tel" 
                     id="contact-phone" 
                     name="phone"
+                    required
                     className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:ring-2 focus:ring-red-900 focus:border-red-900 transition-all duration-300"
                     placeholder="הכנס את מספר הטלפון שלך"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="contact-company" className="block text-white mb-2">חברה</label>
-                  <input 
-                    type="text" 
-                    id="contact-company" 
-                    name="company"
-                    className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:ring-2 focus:ring-red-900 focus:border-red-900 transition-all duration-300"
-                    placeholder="הכנס את שם החברה שלך"
                   />
                 </div>
                 <div>
