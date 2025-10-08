@@ -154,3 +154,4 @@ If you discover a security vulnerability, please follow these steps:
 
 **Last Updated**: January 2024
 **Version**: 1.0
+

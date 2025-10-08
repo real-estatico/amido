@@ -219,3 +219,4 @@ This project is proprietary software. All rights reserved.
 ---
 
 Thank you for contributing to Amido Group! 🚀
+

@@ -142,3 +142,4 @@ If you encounter any issues:
 ---
 
 **🎉 Congratulations!** Your forms are now connected to Google Sheets and will automatically collect all submissions without requiring a backend database!
+

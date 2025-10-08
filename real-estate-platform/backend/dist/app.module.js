@@ -12,8 +12,6 @@ const typeorm_1 = require("@nestjs/typeorm");
 const config_1 = require("@nestjs/config");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
-const projects_module_1 = require("./modules/projects/projects.module");
-const purchase_groups_module_1 = require("./modules/purchase-groups/purchase-groups.module");
 const project_entity_1 = require("./modules/projects/entities/project.entity");
 const purchase_group_entity_1 = require("./modules/purchase-groups/entities/purchase-group.entity");
 let AppModule = class AppModule {
@@ -31,8 +29,6 @@ exports.AppModule = AppModule = __decorate([
                 entities: [project_entity_1.Project, purchase_group_entity_1.PurchaseGroup],
                 synchronize: true,
             }),
-            projects_module_1.ProjectsModule,
-            purchase_groups_module_1.PurchaseGroupsModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
