@@ -462,13 +462,13 @@ export default function Home() {
           className="absolute bg-no-repeat opacity-25 pointer-events-none"
           style={{
             backgroundImage: `url('${typeof window !== 'undefined' && window.location.hostname === 'real-estatico.github.io' ? '/amido/buildings-background/ChatGPT Image Oct 8, 2025, 11_02_37 PM.png' : '/buildings-background/ChatGPT Image Oct 8, 2025, 11_02_37 PM.png'}')`,
-            backgroundSize: 'contain',
+            backgroundSize: 'cover',
             backgroundPosition: 'center bottom',
-            width: '100%',
+            width: '100vw',
             height: '60%',
             bottom: '0',
-            left: '0',
-            right: '0'
+            left: '50%',
+            transform: 'translateX(-50%)'
           }}
         ></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
