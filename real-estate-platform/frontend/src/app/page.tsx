@@ -192,7 +192,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-black" dir="rtl">
+    <div className="min-h-screen bg-black scroll-snap-y scroll-snap-mandatory" dir="rtl">
       {/* Hero Section Background Image Slideshow (absolute to cover hero only) */}
       <div className="absolute inset-0 z-0" style={{ height: '100vh' }}>
         <div 
@@ -334,7 +334,7 @@ export default function Home() {
       </section>
 
       {/* Features Section (Vertical Layout with Image-Text Alternating) */}
-      <section id="features" className="py-48 bg-black relative z-20">
+      <section id="features" className="py-48 bg-black relative z-20 scroll-snap-start">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial="hidden"
@@ -401,7 +401,7 @@ export default function Home() {
       </section>
 
       {/* Vision Section (with gray background, no image, no borders) */}
-      <section id="vision" className="py-48 bg-black relative z-20">
+      <section id="vision" className="py-48 bg-black relative z-20 scroll-snap-start">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial="hidden"
@@ -456,7 +456,7 @@ export default function Home() {
 
 
       {/* Solution Section (Issue vs Solution layout with white borders) */}
-      <section id="solution" className="py-48 bg-black relative z-10">
+      <section id="solution" className="py-48 bg-black relative z-10 scroll-snap-start">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial="hidden"
@@ -627,7 +627,7 @@ export default function Home() {
       </section>
 
       {/* About Us Section */}
-      <section id="about" className="py-48 bg-black relative z-10">
+      <section id="about" className="py-48 bg-black relative z-10 scroll-snap-start">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial="hidden"
@@ -671,7 +671,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-48 bg-black relative z-10">
+      <section id="contact" className="py-48 bg-black relative z-10 scroll-snap-start">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial="hidden"
