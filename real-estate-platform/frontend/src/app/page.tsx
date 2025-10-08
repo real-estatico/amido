@@ -460,7 +460,7 @@ export default function Home() {
         <div 
           className="absolute inset-0 bg-no-repeat bg-center opacity-15 pointer-events-none"
           style={{
-            backgroundImage: `url('/buildings-background/transparent-city-skyline-modern-skyscraper-with-glass-and-steel-glowing-bl6605ed5809f073.61243497.webp')`,
+            backgroundImage: `url('/buildings-background/black-background .jpg')`,
             backgroundSize: 'contain'
           }}
         ></div>
@@ -635,14 +635,6 @@ export default function Home() {
 
       {/* About Us Section */}
       <section id="about" className="py-24 bg-black relative z-10">
-        {/* Building Background Image - continues from solution section */}
-        <div 
-          className="absolute inset-0 bg-no-repeat bg-center opacity-15 pointer-events-none"
-          style={{
-            backgroundImage: `url('/buildings-background/transparent-city-skyline-modern-skyscraper-with-glass-and-steel-glowing-bl6605ed5809f073.61243497.webp')`,
-            backgroundSize: 'contain'
-          }}
-        ></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial="hidden"
@@ -687,14 +679,6 @@ export default function Home() {
 
       {/* Contact Section */}
       <section id="contact" className="py-24 bg-black relative z-10">
-        {/* Building Background Image - continues from about section */}
-        <div 
-          className="absolute inset-0 bg-no-repeat bg-center opacity-15 pointer-events-none"
-          style={{
-            backgroundImage: `url('/buildings-background/transparent-city-skyline-modern-skyscraper-with-glass-and-steel-glowing-bl6605ed5809f073.61243497.webp')`,
-            backgroundSize: 'contain'
-          }}
-        ></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial="hidden"
