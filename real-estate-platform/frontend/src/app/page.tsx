@@ -495,10 +495,10 @@ export default function Home() {
             {/* Issue 1 vs Solution 1 */}
             <motion.div 
               variants={staggerItem}
-              className="flex flex-col md:flex-row items-center min-h-[200px] border border-sky-300/20 bg-black/30 backdrop-blur-sm"
+              className="flex flex-col md:flex-row items-center min-h-[200px] border border-sky-300/20 bg-transparent backdrop-blur-sm"
             >
               {/* Solution Section */}
-              <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-sky-500/10 to-slate-900/50 flex flex-col justify-center border-r border-sky-300/20">
+              <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-sky-500/5 to-slate-900/20 flex flex-col justify-center border-r border-sky-300/20">
                 <div className="flex items-start">
                   <span className="text-sky-400 text-xl ml-3 mt-0.5 flex-shrink-0">✓</span>
                   <div>
@@ -509,7 +509,7 @@ export default function Home() {
               </div>
               
               {/* Issue Section */}
-              <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-slate-800/50 to-red-500/10 flex flex-col justify-center border-l border-red-300/20">
+              <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-slate-800/20 to-red-500/5 flex flex-col justify-center border-l border-red-300/20">
                 <div className="flex items-start">
                   <span className="text-red-400 text-xl ml-3 mt-0.5 flex-shrink-0">✗</span>
                   <div>
@@ -523,10 +523,10 @@ export default function Home() {
             {/* Issue 2 vs Solution 2 */}
             <motion.div 
               variants={staggerItem}
-              className="flex flex-col md:flex-row items-center min-h-[200px] border border-sky-300/20 bg-black/30 backdrop-blur-sm"
+              className="flex flex-col md:flex-row items-center min-h-[200px] border border-sky-300/20 bg-transparent backdrop-blur-sm"
             >
               {/* Solution Section */}
-              <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-sky-500/10 to-slate-900/50 flex flex-col justify-center border-r border-sky-300/20">
+              <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-sky-500/5 to-slate-900/20 flex flex-col justify-center border-r border-sky-300/20">
                 <div className="flex items-start">
                   <span className="text-sky-400 text-xl ml-3 mt-0.5 flex-shrink-0">✓</span>
                   <div>
@@ -537,7 +537,7 @@ export default function Home() {
               </div>
               
               {/* Issue Section */}
-              <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-slate-800/50 to-red-500/10 flex flex-col justify-center border-l border-red-300/20">
+              <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-slate-800/20 to-red-500/5 flex flex-col justify-center border-l border-red-300/20">
                 <div className="flex items-start">
                   <span className="text-red-400 text-xl ml-3 mt-0.5 flex-shrink-0">✗</span>
                   <div>
@@ -551,10 +551,10 @@ export default function Home() {
             {/* Issue 3 vs Solution 3 */}
             <motion.div 
               variants={staggerItem}
-              className="flex flex-col md:flex-row items-center min-h-[200px] border border-sky-300/20 bg-black/30 backdrop-blur-sm"
+              className="flex flex-col md:flex-row items-center min-h-[200px] border border-sky-300/20 bg-transparent backdrop-blur-sm"
             >
               {/* Solution Section */}
-              <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-sky-500/10 to-slate-900/50 flex flex-col justify-center border-r border-sky-300/20">
+              <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-sky-500/5 to-slate-900/20 flex flex-col justify-center border-r border-sky-300/20">
                 <div className="flex items-start">
                   <span className="text-sky-400 text-xl ml-3 mt-0.5 flex-shrink-0">✓</span>
                   <div>
@@ -565,7 +565,7 @@ export default function Home() {
               </div>
               
               {/* Issue Section */}
-              <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-slate-800/50 to-red-500/10 flex flex-col justify-center border-l border-red-300/20">
+              <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-slate-800/20 to-red-500/5 flex flex-col justify-center border-l border-red-300/20">
                 <div className="flex items-start">
                   <span className="text-red-400 text-xl ml-3 mt-0.5 flex-shrink-0">✗</span>
                   <div>
@@ -579,10 +579,10 @@ export default function Home() {
             {/* Issue 4 vs Solution 4 */}
             <motion.div 
               variants={staggerItem}
-              className="flex flex-col md:flex-row items-center min-h-[200px] border border-sky-300/20 bg-black/30 backdrop-blur-sm"
+              className="flex flex-col md:flex-row items-center min-h-[200px] border border-sky-300/20 bg-transparent backdrop-blur-sm"
             >
               {/* Solution Section */}
-              <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-sky-500/10 to-slate-900/50 flex flex-col justify-center border-r border-sky-300/20">
+              <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-sky-500/5 to-slate-900/20 flex flex-col justify-center border-r border-sky-300/20">
                 <div className="flex items-start">
                   <span className="text-sky-400 text-xl ml-3 mt-0.5 flex-shrink-0">✓</span>
                   <div>
@@ -593,7 +593,7 @@ export default function Home() {
               </div>
               
               {/* Issue Section */}
-              <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-slate-800/50 to-red-500/10 flex flex-col justify-center border-l border-red-300/20">
+              <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-slate-800/20 to-red-500/5 flex flex-col justify-center border-l border-red-300/20">
                 <div className="flex items-start">
                   <span className="text-red-400 text-xl ml-3 mt-0.5 flex-shrink-0">✗</span>
                   <div>
@@ -607,10 +607,10 @@ export default function Home() {
             {/* Issue 5 vs Solution 5 */}
             <motion.div 
               variants={staggerItem}
-              className="flex flex-col md:flex-row items-center min-h-[200px] border border-sky-300/20 bg-black/30 backdrop-blur-sm"
+              className="flex flex-col md:flex-row items-center min-h-[200px] border border-sky-300/20 bg-transparent backdrop-blur-sm"
             >
               {/* Solution Section */}
-              <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-sky-500/10 to-slate-900/50 flex flex-col justify-center border-r border-sky-300/20">
+              <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-sky-500/5 to-slate-900/20 flex flex-col justify-center border-r border-sky-300/20">
                 <div className="flex items-start">
                   <span className="text-sky-400 text-xl ml-3 mt-0.5 flex-shrink-0">✓</span>
                   <div>
@@ -621,7 +621,7 @@ export default function Home() {
               </div>
               
               {/* Issue Section */}
-              <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-slate-800/50 to-red-500/10 flex flex-col justify-center border-l border-red-300/20">
+              <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-slate-800/20 to-red-500/5 flex flex-col justify-center border-l border-red-300/20">
                 <div className="flex items-start">
                   <span className="text-red-400 text-xl ml-3 mt-0.5 flex-shrink-0">✗</span>
                   <div>
