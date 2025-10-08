@@ -115,13 +115,13 @@ export function showFormMessage(result: FormSubmissionResult, isSuccess: boolean
   const isSuccessResult = result.result === 'success';
   const icon = isSuccessResult ? '✅' : '❌';
   const title = isSuccessResult ? 'הטופס נשלח בהצלחה!' : 'שגיאה בשליחת הטופס';
-  const message = isSuccessResult ? 'תודה רבה! נחזור אליך בהקדם.' : (result.error || 'אירעה שגיאה לא צפויה. אנא נסה שוב.');
+  const message = isSuccessResult ? 'תודה רבה שהקדת מזמנך.\nהצוות של amido יעבור על הנתונים ויחזור אליך בהמשך עם הזדמנויות המתאימות עבורך. אנחנו מאמינים שהכל מתחיל באמון - ומשם הדרך מעלה' : (result.error || 'אירעה שגיאה לא צפויה. אנא נסה שוב.');
   
   modal.innerHTML = `
     <div class="bg-white rounded-lg p-8 max-w-md mx-4 text-center shadow-xl">
       <div class="text-6xl mb-4">${icon}</div>
       <h3 class="text-2xl font-bold mb-4 text-gray-800">${title}</h3>
-      <p class="text-gray-600 mb-6">${message}</p>
+      <p class="text-gray-600 mb-6 whitespace-pre-line">${message}</p>
       <button 
         onclick="this.closest('.fixed').remove()" 
         class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"

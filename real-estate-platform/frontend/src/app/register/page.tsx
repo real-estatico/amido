@@ -18,7 +18,9 @@ export default function Register() {
     investmentGoal: '',
     liquidityImportance: '',
     preferredRegions: [] as string[],
-    projectType: ''
+    projectType: '',
+    communityInterest: '',
+    additionalInfo: ''
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -62,7 +64,8 @@ export default function Register() {
         liquidityImportance: formData.liquidityImportance,
         preferredRegions: formData.preferredRegions,
         projectType: formData.projectType,
-        additionalInfo: ''
+        communityInterest: formData.communityInterest,
+        additionalInfo: formData.additionalInfo
       };
 
       const result = await submitRegistrationForm(registrationData);
@@ -81,7 +84,9 @@ export default function Register() {
           investmentGoal: '',
           liquidityImportance: '',
           preferredRegions: [],
-          projectType: ''
+          projectType: '',
+          communityInterest: '',
+          additionalInfo: ''
         });
       }
     } catch (error) {
@@ -408,6 +413,56 @@ export default function Register() {
                     <option value="seaside">פרוייקט ליד הים - נכס עם ערך מוסף ויתרון לוקיישן</option>
                     <option value="early">פרוייקט יזמי בשלב מוקדם - כניסה לפני כולם בשלב הראשוני עם פוטנציאל עליית ערך משמעותי לאורך זמן</option>
                   </select>
+                </div>
+              </div>
+
+              {/* Community Interest Section */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <h3 className="text-2xl font-bold text-white mb-6 font-luxury-display text-center">
+                  קהילה מובילה
+                </h3>
+                <p className="text-white/90 mb-8 text-center leading-relaxed font-luxury-body">
+                  בamido group אנו מאמינים שכח אמיתי נבנה מאנשים. אנחנו יוצרים קהילה סגורה של משקיעים איכותיים - אנשים עם חזרון, אמון וערכין משותפים שנהנים מערך מוסף אמיתי: אירועים בלעדיםם, כנסים מקצועיים, מפגשי נטווריקנג ותוכן שמחבר בין אנשים להזדמנויות.
+                </p>
+                
+                <div className="mb-8">
+                  <label className="block text-white text-lg font-luxury-body mb-4">
+                    עד כמה הרעיון של קהילה כזו מדבר אליך?
+                  </label>
+                  <div className="space-y-3">
+                    {[
+                      { value: 'very-interested', label: 'מאוד - הייתי רוצה להיות חלק פעיל מהקהילה' },
+                      { value: 'somewhat-interested', label: 'מעניין - אשמח לשמוע עוד ולהכיר את הפעילות' },
+                      { value: 'less-interested', label: 'פחות - מעדיף להתמקד בהשקעות עצמן' }
+                    ].map((option) => (
+                      <label key={option.value} className="flex items-center space-x-3 space-x-reverse">
+                        <input
+                          type="radio"
+                          name="communityInterest"
+                          value={option.value}
+                          checked={formData.communityInterest === option.value}
+                          onChange={handleInputChange}
+                          className="w-4 h-4 text-red-900 bg-white/20 border-white/30 focus:ring-red-900 focus:ring-2"
+                        />
+                        <span className="text-white/90 font-luxury-body">{option.label}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="additionalInfo" className="block text-white text-lg font-luxury-body mb-4">
+                    האם יש משהו נוסף שחשוב לך שנדע עלייך או על אופי ההשקעה שלך?
+                  </label>
+                  <textarea
+                    id="additionalInfo"
+                    name="additionalInfo"
+                    value={formData.additionalInfo}
+                    onChange={handleInputChange}
+                    rows={4}
+                    className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:ring-2 focus:ring-red-900 focus:border-red-900 transition-all duration-300 text-sm sm:text-base font-luxury-body"
+                    placeholder="שתף איתנו מידע נוסף..."
+                  />
                 </div>
               </div>
 
