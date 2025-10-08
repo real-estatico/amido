@@ -38,6 +38,11 @@ export const metadata: Metadata = {
   description: "הצטרפו לקהילה סודית של משקיעים נבחרים. גישה לעסקאות יוקרה בלעדיות, תנאים מועדפים ומומחיות משותפת.",
   keywords: "השקעות נדלן, קבוצת רכישה, נדלן יוקרה, השקעות, נדלן",
   authors: [{ name: "Amido Group" }],
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
 };
 
 export const viewport: Viewport = {
