@@ -454,13 +454,14 @@ export default function Home() {
       </section>
 
 
-      {/* Building Background - Fixed for all lower sections */}
+      {/* Building Background - Fixed for all lower sections except hero */}
       <div 
         className="fixed inset-0 bg-no-repeat bg-center opacity-40 pointer-events-none"
         style={{
           backgroundImage: `url('/buildings-background/black-background .jpg')`,
           backgroundSize: 'contain',
-          zIndex: 5
+          zIndex: 5,
+          top: '100vh' // Start after hero section
         }}
       ></div>
 
@@ -663,15 +664,15 @@ export default function Home() {
             variants={staggerContainer}
             className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto"
           >
-            <motion.div variants={staggerItem} className="bg-slate-800 p-8 text-center">
+            <motion.div variants={staggerItem} className="bg-slate-800/20 p-8 text-center">
               <h3 className="text-2xl font-bold text-white mb-4">מומחיות מקצועית</h3>
               <p className="text-white/90">צוות מומחים עם ניסיון עשיר בתחום הנדלן והשקעות</p>
             </motion.div>
-            <motion.div variants={staggerItem} className="bg-slate-800 p-8 text-center">
+            <motion.div variants={staggerItem} className="bg-slate-800/20 p-8 text-center">
               <h3 className="text-2xl font-bold text-white mb-4">שקיפות מלאה</h3>
               <p className="text-white/90">ליווי משפטי וכלי בדיקה קפדניים בכל שלב</p>
             </motion.div>
-            <motion.div variants={staggerItem} className="bg-slate-800 p-8 text-center">
+            <motion.div variants={staggerItem} className="bg-slate-800/20 p-8 text-center">
               <h3 className="text-2xl font-bold text-white mb-4">קהילה חזקה</h3>
               <p className="text-white/90">רשת משקיעים איכותית עם ערכים משותפים</p>
             </motion.div>
