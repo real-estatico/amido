@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Logo from "../../components/Logo";
+import { submitRegistrationForm, showFormMessage } from "../../utils/formSubmission";
 
 export default function Register() {
   const [formData, setFormData] = useState({
@@ -26,7 +27,7 @@ export default function Register() {
     if (type === 'checkbox') {
       const checked = (e.target as HTMLInputElement).checked;
       if (name === 'investmentTypes' || name === 'preferredRegions') {
-        setFormData(prev => ({
+        setFormData((prev: any) => ({
           ...prev,
           [name]: checked 
             ? [...prev[name as keyof typeof prev] as string[], value]
@@ -34,16 +35,61 @@ export default function Register() {
         }));
       }
     } else {
-      setFormData(prev => ({
+      setFormData((prev: any) => ({
         ...prev,
         [name]: value
       }));
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert('תודה על ההרשמה! נחזור אליך בקרוב.');
+    setIsSubmitting(true);
+
+    try {
+      const registrationData = {
+        name: `${formData.firstName} ${formData.lastName}`,
+        email: formData.email,
+        phone: formData.phone,
+        company: '', // Not collected in registration form
+        investmentExperience: formData.hasInvested,
+        investmentTypes: formData.investmentTypes,
+        investmentTimeline: formData.investmentTimeline,
+        investmentAmount: formData.investmentAmount,
+        investmentGoal: formData.investmentGoal,
+        liquidityImportance: formData.liquidityImportance,
+        preferredRegions: formData.preferredRegions,
+        projectType: formData.projectType,
+        additionalInfo: ''
+      };
+
+      const result = await submitRegistrationForm(registrationData);
+      showFormMessage(result);
+      
+      if (result.result === 'success') {
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          hasInvested: '',
+          investmentTypes: [],
+          investmentTimeline: '',
+          investmentAmount: '',
+          investmentGoal: '',
+          liquidityImportance: '',
+          preferredRegions: [],
+          projectType: ''
+        });
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('❌ שגיאה בשליחת הטופס. אנא נסה שוב.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -381,9 +427,10 @@ export default function Register() {
               <div className="text-center pt-8">
                 <button
                   type="submit"
-                  className="bg-gradient-to-r from-red-900 to-red-950 text-white px-16 py-6 text-xl font-luxury-accent hover:from-red-950 hover:to-red-900 transition-all duration-300 shadow-2xl shadow-red-900/25"
+                  disabled={isSubmitting}
+                  className="bg-gradient-to-r from-red-900 to-red-950 text-white px-16 py-6 text-xl font-luxury-accent hover:from-red-950 hover:to-red-900 transition-all duration-300 shadow-2xl shadow-red-900/25 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  שלח טופס הרשמה
+                  {isSubmitting ? 'שולח...' : 'שלח טופס הרשמה'}
                 </button>
               </div>
             </form>

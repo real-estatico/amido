@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Logo from "../components/Logo";
+import { submitContactForm, showFormMessage } from "../utils/formSubmission";
 
 // Function to get all background images dynamically
 const getAllBackgroundImages = () => {
@@ -78,6 +79,52 @@ export default function Home() {
 
     return () => clearInterval(interval);
   }, [slideshowImages.length]);
+
+  // Contact form submission handler
+  const handleContactFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    
+    const contactData = {
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      phone: formData.get('phone') as string,
+      company: formData.get('company') as string,
+      message: formData.get('message') as string,
+    };
+
+    // Show loading state
+    const submitButton = document.getElementById('contact-submit') as HTMLButtonElement;
+    const submitText = document.getElementById('contact-submit-text');
+    const submitLoading = document.getElementById('contact-submit-loading');
+    
+    if (submitButton && submitText && submitLoading) {
+      submitButton.disabled = true;
+      submitText.classList.add('hidden');
+      submitLoading.classList.remove('hidden');
+    }
+
+    try {
+      const result = await submitContactForm(contactData);
+      showFormMessage(result);
+      
+      if (result.result === 'success') {
+        form.reset();
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('❌ שגיאה בשליחת הטופס. אנא נסה שוב.');
+    } finally {
+      // Reset button state
+      if (submitButton && submitText && submitLoading) {
+        submitButton.disabled = false;
+        submitText.classList.remove('hidden');
+        submitLoading.classList.add('hidden');
+      }
+    }
+  };
 
   // Function to get features images dynamically
   const getFeaturesImages = () => {
@@ -547,39 +594,67 @@ export default function Home() {
             className="max-w-2xl mx-auto"
           >
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8">
-              <form className="space-y-6">
+              <form id="contact-form" onSubmit={handleContactFormSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-white mb-2">שם מלא</label>
+                  <label htmlFor="contact-name" className="block text-white mb-2">שם מלא</label>
                   <input 
                     type="text" 
-                    id="name" 
+                    id="contact-name" 
+                    name="name"
+                    required
                     className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:ring-2 focus:ring-red-900 focus:border-red-900 transition-all duration-300"
                     placeholder="הכנס את שמך המלא"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-white mb-2">אימייל</label>
+                  <label htmlFor="contact-email" className="block text-white mb-2">אימייל</label>
                   <input 
                     type="email" 
-                    id="email" 
+                    id="contact-email" 
+                    name="email"
+                    required
                     className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:ring-2 focus:ring-red-900 focus:border-red-900 transition-all duration-300"
                     placeholder="הכנס את כתובת האימייל שלך"
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-white mb-2">הודעה</label>
+                  <label htmlFor="contact-phone" className="block text-white mb-2">טלפון</label>
+                  <input 
+                    type="tel" 
+                    id="contact-phone" 
+                    name="phone"
+                    className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:ring-2 focus:ring-red-900 focus:border-red-900 transition-all duration-300"
+                    placeholder="הכנס את מספר הטלפון שלך"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="contact-company" className="block text-white mb-2">חברה</label>
+                  <input 
+                    type="text" 
+                    id="contact-company" 
+                    name="company"
+                    className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:ring-2 focus:ring-red-900 focus:border-red-900 transition-all duration-300"
+                    placeholder="הכנס את שם החברה שלך"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="contact-message" className="block text-white mb-2">הודעה</label>
                   <textarea 
-                    id="message" 
+                    id="contact-message" 
+                    name="message"
                     rows={4}
+                    required
                     className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:ring-2 focus:ring-red-900 focus:border-red-900 transition-all duration-300"
                     placeholder="כתוב את ההודעה שלך כאן"
                   ></textarea>
                 </div>
                 <button 
                   type="submit"
-                  className="w-full bg-red-900 text-white px-8 py-4 text-lg font-luxury-accent hover:bg-red-950 transition-all duration-300"
+                  id="contact-submit"
+                  className="w-full bg-red-900 text-white px-8 py-4 text-lg font-luxury-accent hover:bg-red-950 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  שלח הודעה
+                  <span id="contact-submit-text">שלח הודעה</span>
+                  <span id="contact-submit-loading" className="hidden">שולח...</span>
                 </button>
               </form>
             </div>
