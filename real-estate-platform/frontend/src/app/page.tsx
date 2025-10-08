@@ -209,7 +209,7 @@ export default function Home() {
 
       {/* Navigation */}
       <nav className="bg-transparent backdrop-blur-sm sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex justify-between items-center h-16 md:h-20">
             <div className="flex items-center">
               <Link href="#" className="cursor-pointer">
@@ -335,7 +335,7 @@ export default function Home() {
 
       {/* Features Section (Vertical Layout with Image-Text Alternating) */}
       <section id="features" className="py-32 bg-black relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -402,7 +402,7 @@ export default function Home() {
 
       {/* Vision Section (with gray background, no image, no borders) */}
       <section id="vision" className="py-24 bg-black relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -454,19 +454,18 @@ export default function Home() {
       </section>
 
 
-      {/* Building Background - Fixed background for all lower sections (not hero) */}
-      <div 
-        className="fixed inset-0 bg-no-repeat bg-center opacity-20 pointer-events-none"
-        style={{
-          backgroundImage: `url('/buildings-background/black-background .jpg')`,
-          backgroundSize: 'contain',
-          zIndex: 5
-        }}
-      ></div>
-
       {/* Solution Section (Issue vs Solution layout with white borders) */}
-      <section id="solution" className="py-24 bg-black/80 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="solution" className="py-24 bg-black relative z-10">
+        {/* Building Background for this section */}
+        <div 
+          className="absolute inset-0 bg-no-repeat bg-center opacity-30 pointer-events-none"
+          style={{
+            backgroundImage: `url('/buildings-background/black-background .jpg')`,
+            backgroundSize: 'contain',
+            zIndex: 1
+          }}
+        ></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -636,8 +635,17 @@ export default function Home() {
       </section>
 
       {/* About Us Section */}
-      <section id="about" className="py-24 bg-black/80 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="about" className="py-24 bg-black relative z-10">
+        {/* Building Background for this section */}
+        <div 
+          className="absolute inset-0 bg-no-repeat bg-center opacity-30 pointer-events-none"
+          style={{
+            backgroundImage: `url('/buildings-background/black-background .jpg')`,
+            backgroundSize: 'contain',
+            zIndex: 1
+          }}
+        ></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -680,8 +688,17 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-black/80 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="contact" className="py-24 bg-black relative z-10">
+        {/* Building Background for this section */}
+        <div 
+          className="absolute inset-0 bg-no-repeat bg-center opacity-30 pointer-events-none"
+          style={{
+            backgroundImage: `url('/buildings-background/black-background .jpg')`,
+            backgroundSize: 'contain',
+            zIndex: 1
+          }}
+        ></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -768,7 +785,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-black py-12 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             <Logo className="text-white mx-auto mb-6" size="lg" />
             <p className="text-white/60 mb-4">
