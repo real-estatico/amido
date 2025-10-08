@@ -432,19 +432,19 @@ export default function Home() {
               
               {/* Content */}
               <div className="relative z-10">
-                <p className="text-xl text-white/90 leading-relaxed mb-8 font-luxury-body">
+                <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed mb-8 font-luxury-body">
                   החזון שלנו הוא להנגיש את עולם ההשקעות בנדלן, כך שגם משקיעים פרטיים יוכלו להנות מהזדמנויות יוצאות דופן.
                 </p>
                 
-                <p className="text-xl text-white/90 leading-relaxed mb-8 font-luxury-body">
+                <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed mb-8 font-luxury-body">
                   אנו שואפים לבנות קהילת משקיעים איכותית ומובילה המבוססת על אמון, שקיפות ומקצועיות שתעניק לחבריה - גישה לעסקאות פרי-סייל ייחודיות בתנאים מועדפים, ליווי משפטי ומקצועי המבטיח ביטחון ושקט נפשי לאורך כל הדרך וחווית השתייכות לקבוצה חזקה, ערכית וחדשנית המשלבת בין הון כלכלי להון אנושי.
                 </p>
                 
-                <p className="text-xl text-white/90 leading-relaxed mb-8 font-luxury-body">
+                <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed mb-8 font-luxury-body">
                   מעבר לעסקאות אנו יוצרים פלטפורמה חברתית המשלבת כנסים, מפגשים ותוכן מקצועי ברמה הגבוהה ביותר ההופכים כל השקעה לחוויה מעצימה ומשמעותית.
                 </p>
                 
-                <p className="text-xl text-white/90 leading-relaxed font-luxury-body">
+                <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed font-luxury-body">
                   אנו רואים בקבוצה הזו את הבסיס למותג השקעות נדל״ן מוביל בישראל. הזדמנות אמיתית לצמיחה כלכלית וחברתית.
                 </p>
               </div>
@@ -489,7 +489,7 @@ export default function Home() {
               {/* Solution Section */}
               <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-sky-500/10 to-slate-900/50 flex flex-col justify-center border-r border-sky-300/20">
                 <div className="flex items-start">
-                  <span className="text-sky-400 text-xl ml-3 mt-1">✓</span>
+                  <span className="text-sky-400 text-xl ml-3 mt-0.5 flex-shrink-0">✓</span>
                   <div>
                     <h4 className="text-2xl font-bold text-white mb-3 font-luxury-heading">מיקסום ערך ההשקעה</h4>
                     <p className="text-base text-white/90 leading-relaxed font-luxury-body">ניצול כח הקבוצה להשגת הנחות משמעותיות, תנאי מימון נוחים ותנאים מסחריים מיטביים.</p>
@@ -500,7 +500,7 @@ export default function Home() {
               {/* Issue Section */}
               <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-slate-800/50 to-red-500/10 flex flex-col justify-center border-l border-red-300/20">
                 <div className="flex items-start">
-                  <span className="text-red-400 text-xl ml-3 mt-1">✗</span>
+                  <span className="text-red-400 text-xl ml-3 mt-0.5 flex-shrink-0">✗</span>
                   <div>
                     <h4 className="text-2xl font-bold text-white mb-3 font-luxury-heading">מחירים ותנאים</h4>
                     <p className="text-base text-white/90 leading-relaxed font-luxury-body">משקיע פרטי לא מצליח להשיג הנחות והטבות שמקבלות קבוצות גדולות או גופים מוסדיים.</p>
@@ -517,7 +517,7 @@ export default function Home() {
               {/* Solution Section */}
               <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-sky-500/10 to-slate-900/50 flex flex-col justify-center border-r border-sky-300/20">
                 <div className="flex items-start">
-                  <span className="text-sky-400 text-xl ml-3 mt-1">✓</span>
+                  <span className="text-sky-400 text-xl ml-3 mt-0.5 flex-shrink-0">✓</span>
                   <div>
                     <h4 className="text-2xl font-bold text-white mb-3 font-luxury-heading">הנגשת הזדמנויות בלעדיות</h4>
                     <p className="text-base text-white/90 leading-relaxed font-luxury-body">לתת למשקיעים פרטיים עסקאות פרי-סייל ייחודיות במחירים ותנאים שלא קיימים בשוק החופשי.</p>
@@ -528,7 +528,7 @@ export default function Home() {
               {/* Issue Section */}
               <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-slate-800/50 to-red-500/10 flex flex-col justify-center border-l border-red-300/20">
                 <div className="flex items-start">
-                  <span className="text-red-400 text-xl ml-3 mt-1">✗</span>
+                  <span className="text-red-400 text-xl ml-3 mt-0.5 flex-shrink-0">✗</span>
                   <div>
                     <h4 className="text-2xl font-bold text-white mb-3 font-luxury-heading">גישה לעסקאות פרי-סייל</h4>
                     <p className="text-base text-white/90 leading-relaxed font-luxury-body">העסקאות המשתלמות נסגרות מאחורי הקלעים הרבה לפני שהציבור הרחב נחשף אליהן.</p>
@@ -545,7 +545,7 @@ export default function Home() {
               {/* Solution Section */}
               <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-sky-500/10 to-slate-900/50 flex flex-col justify-center border-r border-sky-300/20">
                 <div className="flex items-start">
-                  <span className="text-sky-400 text-xl ml-3 mt-1">✓</span>
+                  <span className="text-sky-400 text-xl ml-3 mt-0.5 flex-shrink-0">✓</span>
                   <div>
                     <h4 className="text-2xl font-bold text-white mb-3 font-luxury-heading">ביטחון ושקיפות מלאה</h4>
                     <p className="text-base text-white/90 leading-relaxed font-luxury-body">צוות משפטי וכלי בדיקה קפדניים שמבטיחים ליווי אישי ושקיפות מלאה בכל שלב.</p>
@@ -556,7 +556,7 @@ export default function Home() {
               {/* Issue Section */}
               <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-slate-800/50 to-red-500/10 flex flex-col justify-center border-l border-red-300/20">
                 <div className="flex items-start">
-                  <span className="text-red-400 text-xl ml-3 mt-1">✗</span>
+                  <span className="text-red-400 text-xl ml-3 mt-0.5 flex-shrink-0">✗</span>
                   <div>
                     <h4 className="text-2xl font-bold text-white mb-3 font-luxury-heading">ליווי מקצועי</h4>
                     <p className="text-base text-white/90 leading-relaxed font-luxury-body">משקיעים רבים פועלים לבדם, ללא עורכי דין המגנים עליהם או אנשי מקצוע הבוחנים את טיב העסקה לעומק.</p>
@@ -573,7 +573,7 @@ export default function Home() {
               {/* Solution Section */}
               <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-sky-500/10 to-slate-900/50 flex flex-col justify-center border-r border-sky-300/20">
                 <div className="flex items-start">
-                  <span className="text-sky-400 text-xl ml-3 mt-1">✓</span>
+                  <span className="text-sky-400 text-xl ml-3 mt-0.5 flex-shrink-0">✓</span>
                   <div>
                     <h4 className="text-2xl font-bold text-white mb-3 font-luxury-heading">קהילה איכותית ומובילה</h4>
                     <p className="text-base text-white/90 leading-relaxed font-luxury-body">חיבור בין אנשים בעלי ערכים משותפים, יצירת רשת עסקית וחברתית שתעניק ערך מעבר לעסקה עצמה.</p>
@@ -584,7 +584,7 @@ export default function Home() {
               {/* Issue Section */}
               <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-slate-800/50 to-red-500/10 flex flex-col justify-center border-l border-red-300/20">
                 <div className="flex items-start">
-                  <span className="text-red-400 text-xl ml-3 mt-1">✗</span>
+                  <span className="text-red-400 text-xl ml-3 mt-0.5 flex-shrink-0">✗</span>
                   <div>
                     <h4 className="text-2xl font-bold text-white mb-3 font-luxury-heading">שקיפות</h4>
                     <p className="text-base text-white/90 leading-relaxed font-luxury-body">עודף מידע שיווקי, חוסר בהירות וחוסר אמון פוגעים ביכולות המשקיע להבין את העסקה.</p>
@@ -601,7 +601,7 @@ export default function Home() {
               {/* Solution Section */}
               <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-sky-500/10 to-slate-900/50 flex flex-col justify-center border-r border-sky-300/20">
                 <div className="flex items-start">
-                  <span className="text-sky-400 text-xl ml-3 mt-1">✓</span>
+                  <span className="text-sky-400 text-xl ml-3 mt-0.5 flex-shrink-0">✓</span>
                   <div>
                     <h4 className="text-2xl font-bold text-white mb-3 font-luxury-heading">אירועים, כנסים ותוכן בלעדי</h4>
                     <p className="text-base text-white/90 leading-relaxed font-luxury-body">חברי הקבוצה יהנו מגישה לאירועים וכנסים סגורים, מפגשי נטוורקינג יוקרתיים ותוכן מקצועי ייחודי.</p>
@@ -612,7 +612,7 @@ export default function Home() {
               {/* Issue Section */}
               <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-slate-800/50 to-red-500/10 flex flex-col justify-center border-l border-red-300/20">
                 <div className="flex items-start">
-                  <span className="text-red-400 text-xl ml-3 mt-1">✗</span>
+                  <span className="text-red-400 text-xl ml-3 mt-0.5 flex-shrink-0">✗</span>
                   <div>
                     <h4 className="text-2xl font-bold text-white mb-3 font-luxury-heading">שייכות</h4>
                     <p className="text-base text-white/90 leading-relaxed font-luxury-body">משקיעים פרטיים פועלים באופן בודד - "כל אחד לעצמו", ללא קהילה מאוחדת, ללא גב משותף וללא שיתוף ידע היכול להעצים את ההשקעה.</p>
