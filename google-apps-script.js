@@ -45,7 +45,7 @@ function setupHeaders(sheet) {
   sheet.getRange(1, 1, 1, headers.length).setFontColor('white');
 }
 
-function doPost(e) {
+function doGet(e) {
   const lock = LockService.getScriptLock();
   lock.tryLock(10000);
 
@@ -82,7 +82,7 @@ function doPost(e) {
       .setMimeType(ContentService.MimeType.JSON);
       
   } catch (error) {
-    console.error('Error in doPost:', error);
+    console.error('Error in doGet:', error);
     return ContentService
       .createTextOutput(JSON.stringify({ 
         'result': 'error', 
@@ -94,7 +94,13 @@ function doPost(e) {
   }
 }
 
-function doGet(e) {
+function doPost(e) {
+  // Keep doPost for backward compatibility
+  return doGet(e);
+}
+
+// Test function to check if script is working
+function testScript() {
   return ContentService
     .createTextOutput(JSON.stringify({ 
       'status': 'active',
