@@ -509,18 +509,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Building Background with more space */}
-      <div 
-        className="relative bg-no-repeat pointer-events-none py-24 mx-auto -mt-8"
-        style={{
-          backgroundImage: `url('${typeof window !== 'undefined' && window.location.hostname === 'real-estatico.github.io' ? '/amido/buildings-background/ChatGPT Image Oct 8, 2025, 11_02_37 PM.png' : '/buildings-background/ChatGPT Image Oct 8, 2025, 11_02_37 PM.png'}')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          width: '60%',
-          height: '400px',
-          zIndex: 20
-        }}
-      ></div>
 
       {/* Solution Section (Issue vs Solution layout with white borders) */}
       <section id="solution" className="py-48 bg-black relative z-10">
