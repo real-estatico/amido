@@ -1,11 +1,57 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import Logo from "../../components/Logo";
 import { submitRegistrationForm, showFormMessage } from "../../utils/formSubmission";
 
+// Function to get all background images dynamically
+const getAllBackgroundImages = () => {
+  const backgroundImages = [
+    '/amido/background/pexels-brett-sayles-2606383.jpg',
+    '/amido/background/pexels-expect-best-79873-351262.jpg',
+    '/amido/background/pexels-pixabay-259950.jpg',
+    '/amido/background/pexels-sevenstormphotography-409842.jpg',
+    '/amido/background/pexels-sevenstormphotography-425122.jpg'
+  ];
+  return backgroundImages;
+};
+
+// Animation variants
+const fadeInUp = {
+  hidden: { opacity: 0, y: 60, scale: 0.95 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    scale: 1,
+    transition: {
+      duration: 0.8,
+      ease: [0.6, -0.05, 0.01, 0.99],
+      type: "spring",
+      stiffness: 100,
+      damping: 15
+    }
+  }
+};
+
 export default function Register() {
+  // Background slideshow
+  const slideshowImages = getAllBackgroundImages();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Slideshow effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === slideshowImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 10000); // Change image every 10 seconds
+
+    return () => clearInterval(interval);
+  }, [slideshowImages.length]);
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -97,46 +143,111 @@ export default function Register() {
 
   return (
     <div className="min-h-screen bg-black" dir="rtl">
+      {/* Background Image Slideshow */}
+      <div className="absolute inset-0 z-0" style={{ height: '100vh' }}>
+        <div 
+          className="w-full h-full bg-cover bg-center bg-no-repeat transition-all duration-1000 ease-in-out"
+          style={{
+            backgroundImage: `url('${slideshowImages[currentImageIndex]}')`,
+            backgroundPosition: "center top"
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-black/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-black/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30"></div>
+      </div>
+
       {/* Navigation */}
-      <nav className="bg-slate-900/95 backdrop-blur-lg border-b border-white/20 sticky top-0 z-50 shadow-2xl">
+      <nav className="bg-transparent backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
+          <div className="flex justify-between items-center h-16 md:h-20">
             <div className="flex items-center">
-              <Link href="/">
+              <Link href="/" className="cursor-pointer">
                 <Logo className="text-white" size="md" />
               </Link>
             </div>
-            <div className="flex items-center space-x-8 space-x-reverse">
-              <Link href="/" className="text-white/80 hover:text-white px-6 py-3 text-lg font-luxury-accent transition-all duration-300 hover:bg-red-900/20 hover:border-red-900/30 border border-transparent">
+            
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center space-x-12 space-x-reverse">
+              <Link href="/" className="text-white/70 hover:text-white text-sm font-luxury-body transition-all duration-300 tracking-wider uppercase">
                 חזרה לעמוד הבית
               </Link>
             </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden text-white/70 hover:text-white transition-colors duration-300"
+              aria-label="Toggle mobile menu"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {isMobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
           </div>
+
+          {/* Mobile Navigation Menu */}
+          {isMobileMenuOpen && (
+            <div className="lg:hidden bg-black/90 backdrop-blur-sm border-t border-white/10">
+              <div className="px-2 pt-2 pb-3 space-y-1">
+                <Link 
+                  href="/" 
+                  className="block px-3 py-2 text-white/70 hover:text-white text-sm font-luxury-body transition-all duration-300 tracking-wider uppercase"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  חזרה לעמוד הבית
+                </Link>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
       {/* Header */}
-      <div className="py-20 bg-black">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-8 font-luxury-display">
-              הצטרפות ל-Amido Group
+      <section className="relative z-10 flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-6xl mx-auto">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={fadeInUp}
+            className="mb-12"
+          >
+            <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold text-white mb-4 font-luxury-display tracking-tight">
+              AMIDO
             </h1>
-            <div className="bg-slate-800/50 backdrop-blur-sm shadow-2xl border border-white/20 p-12">
-              <p className="text-xl text-white leading-relaxed mb-6 font-luxury-body">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-white/90 mb-8 md:mb-12 font-luxury-body tracking-wider uppercase">
+              הצטרפות ל-Amido Group
+            </h2>
+            <div className="w-16 sm:w-20 md:w-24 h-0.5 mx-auto mb-8 md:mb-12 bg-white/60"></div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 md:p-12 mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-4xl mx-auto leading-relaxed font-luxury-body mb-6">
                 ברוכים הבאים ל - amido group.
               </p>
-              <p className="text-xl text-white leading-relaxed mb-6 font-luxury-body">
+              <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-4xl mx-auto leading-relaxed font-luxury-body mb-6">
                 אנחנו שמחים על ההזדמנות להכיר אותך קצת יותר. השאלון נועד לעזור לנו להבין את הצרכים, ההעדפות והחזון האישי שלך כמשקיע- כדי שנוכל להתאים עבורך את ההזדמנויות המדויקות והנכונות ביותר.
               </p>
-              <p className="text-xl text-white leading-relaxed font-luxury-body">
+              <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-4xl mx-auto leading-relaxed font-luxury-body">
                 מטרתנו היא לבנות קהילה חזקה של אנשים שחושבים קדימה, פועלים באמון ויוצרים יחד ערך אמיתי.
               </p>
             </div>
-          </div>
+          </motion.div>
+        </div>
+      </section>
 
-          {/* Registration Form */}
-          <div className="bg-slate-800/50 backdrop-blur-sm shadow-2xl border border-white/20 p-12">
+      {/* Registration Form Section */}
+      <section className="py-32 bg-black relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.1 }}
+            variants={fadeInUp}
+            className="bg-white/10 backdrop-blur-sm rounded-lg p-8 md:p-12"
+          >
             <form onSubmit={handleSubmit} className="space-y-12">
               {/* Personal Information Section */}
               <div className="space-y-8">
@@ -422,9 +533,9 @@ export default function Register() {
                 </button>
               </div>
             </form>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
