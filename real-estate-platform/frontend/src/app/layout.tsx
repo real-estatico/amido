@@ -57,6 +57,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="he" dir="rtl" className={`${heebo.variable} ${assistant.variable} ${rubik.variable} ${playfairDisplay.variable} ${cormorantGaramond.variable}`}>
+      <head>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="alternate icon" type="image/svg+xml" href="/favicon.svg" />
+      </head>
       <body className={`${heebo.className} antialiased`}>
         {children}
       </body>
