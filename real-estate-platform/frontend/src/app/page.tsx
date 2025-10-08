@@ -456,16 +456,16 @@ export default function Home() {
 
       {/* Building Background - Fixed background for all lower sections (not hero) */}
       <div 
-        className="fixed inset-0 bg-no-repeat bg-center opacity-15 pointer-events-none"
+        className="fixed inset-0 bg-no-repeat bg-center opacity-20 pointer-events-none"
         style={{
           backgroundImage: `url('/buildings-background/black-background .jpg')`,
           backgroundSize: 'contain',
-          zIndex: 1
+          zIndex: 5
         }}
       ></div>
 
       {/* Solution Section (Issue vs Solution layout with white borders) */}
-      <section id="solution" className="py-24 bg-black relative z-10">
+      <section id="solution" className="py-24 bg-black/80 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial="hidden"
@@ -636,7 +636,7 @@ export default function Home() {
       </section>
 
       {/* About Us Section */}
-      <section id="about" className="py-24 bg-black relative z-10">
+      <section id="about" className="py-24 bg-black/80 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial="hidden"
@@ -680,7 +680,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-black relative z-10">
+      <section id="contact" className="py-24 bg-black/80 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial="hidden"
