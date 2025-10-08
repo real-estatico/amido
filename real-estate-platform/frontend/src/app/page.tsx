@@ -69,6 +69,7 @@ export default function Home() {
   const slideshowImages = getAllBackgroundImages();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
 
   // Slideshow effect
   useEffect(() => {
@@ -80,6 +81,52 @@ export default function Home() {
 
     return () => clearInterval(interval);
   }, [slideshowImages.length]);
+
+  // Scroll detection for automatic section jumping
+  useEffect(() => {
+    let scrollTimeout: NodeJS.Timeout;
+    
+    const handleScroll = () => {
+      if (isScrolling) return;
+      
+      setIsScrolling(true);
+      clearTimeout(scrollTimeout);
+      
+      scrollTimeout = setTimeout(() => {
+        const sections = ['features', 'vision', 'solution', 'about', 'contact'];
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        
+        for (let i = 0; i < sections.length - 1; i++) {
+          const currentSection = document.getElementById(sections[i]);
+          const nextSection = document.getElementById(sections[i + 1]);
+          
+          if (currentSection && nextSection) {
+            const currentSectionBottom = currentSection.offsetTop + currentSection.offsetHeight;
+            const nextSectionTop = nextSection.offsetTop;
+            
+            // If we're near the end of current section (within 100px of bottom)
+            if (scrollPosition + windowHeight >= currentSectionBottom - 100) {
+              // Smooth scroll to next section
+              nextSection.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+              });
+              break;
+            }
+          }
+        }
+        
+        setIsScrolling(false);
+      }, 150); // Wait 150ms after scroll stops
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(scrollTimeout);
+    };
+  }, [isScrolling]);
 
   // Contact form submission handler
   // Function to show contact form success message
@@ -192,7 +239,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-black scroll-snap-y scroll-snap-mandatory" dir="rtl">
+    <div className="min-h-screen bg-black" dir="rtl">
       {/* Hero Section Background Image Slideshow (absolute to cover hero only) */}
       <div className="absolute inset-0 z-0" style={{ height: '100vh' }}>
         <div 
@@ -334,7 +381,7 @@ export default function Home() {
       </section>
 
       {/* Features Section (Vertical Layout with Image-Text Alternating) */}
-      <section id="features" className="py-48 bg-black relative z-20 scroll-snap-start">
+      <section id="features" className="py-48 bg-black relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial="hidden"
@@ -401,7 +448,7 @@ export default function Home() {
       </section>
 
       {/* Vision Section (with gray background, no image, no borders) */}
-      <section id="vision" className="py-48 bg-black relative z-20 scroll-snap-start">
+      <section id="vision" className="py-48 bg-black relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial="hidden"
@@ -456,7 +503,7 @@ export default function Home() {
 
 
       {/* Solution Section (Issue vs Solution layout with white borders) */}
-      <section id="solution" className="py-48 bg-black relative z-10 scroll-snap-start">
+      <section id="solution" className="py-48 bg-black relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial="hidden"
@@ -627,7 +674,7 @@ export default function Home() {
       </section>
 
       {/* About Us Section */}
-      <section id="about" className="py-48 bg-black relative z-10 scroll-snap-start">
+      <section id="about" className="py-48 bg-black relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial="hidden"
@@ -671,7 +718,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-48 bg-black relative z-10 scroll-snap-start">
+      <section id="contact" className="py-48 bg-black relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial="hidden"
