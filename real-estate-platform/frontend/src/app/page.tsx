@@ -457,20 +457,6 @@ export default function Home() {
 
       {/* Vision Section (with gray background, no image, no borders) */}
       <section id="vision" className="py-48 bg-black relative z-20">
-        {/* Building Background for Vision Section */}
-        <div 
-          className="absolute bg-no-repeat opacity-40 pointer-events-none"
-          style={{
-            backgroundImage: `url('${typeof window !== 'undefined' && window.location.hostname === 'real-estatico.github.io' ? '/amido/buildings-background/ChatGPT Image Oct 8, 2025, 11_02_37 PM.png' : '/buildings-background/ChatGPT Image Oct 8, 2025, 11_02_37 PM.png'}')`,
-            backgroundSize: 'contain',
-            backgroundPosition: 'center bottom',
-            width: '98%',
-            height: '60%',
-            bottom: '0',
-            left: '50%',
-            transform: 'translateX(-50%)'
-          }}
-        ></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial="hidden"
@@ -522,7 +508,19 @@ export default function Home() {
         </div>
       </section>
 
-
+      {/* Building Background between Vision and Solution sections */}
+      <div 
+        className="relative bg-no-repeat opacity-40 pointer-events-none py-24"
+        style={{
+          backgroundImage: `url('${typeof window !== 'undefined' && window.location.hostname === 'real-estatico.github.io' ? '/amido/buildings-background/ChatGPT Image Oct 8, 2025, 11_02_37 PM.png' : '/buildings-background/ChatGPT Image Oct 8, 2025, 11_02_37 PM.png'}')`,
+          backgroundSize: 'contain',
+          backgroundPosition: 'center',
+          width: '98%',
+          height: '300px',
+          left: '50%',
+          transform: 'translateX(-50%)'
+        }}
+      ></div>
 
       {/* Solution Section (Issue vs Solution layout with white borders) */}
       <section id="solution" className="py-48 bg-black relative z-10">
