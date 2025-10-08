@@ -82,6 +82,35 @@ export default function Home() {
   }, [slideshowImages.length]);
 
   // Contact form submission handler
+  // Function to show contact form success message
+  const showContactSuccessMessage = () => {
+    const modal = document.createElement('div');
+    modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+    
+    modal.innerHTML = `
+      <div class="bg-white rounded-lg p-8 max-w-md mx-4 text-center shadow-xl">
+        <div class="text-6xl mb-4">✅</div>
+        <h3 class="text-2xl font-bold mb-4 text-gray-800">תודה שפניתם אלינו</h3>
+        <p class="text-gray-600 mb-6">נענה על פנייתכם בהקדם!</p>
+        <button 
+          onclick="this.closest('.fixed').remove()" 
+          class="bg-red-900 text-white px-6 py-3 rounded-lg hover:bg-red-950 transition-colors"
+        >
+          סגור
+        </button>
+      </div>
+    `;
+    
+    document.body.appendChild(modal);
+    
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+      if (modal.parentNode) {
+        modal.parentNode.removeChild(modal);
+      }
+    }, 5000);
+  };
+
   const handleContactFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
@@ -109,9 +138,10 @@ export default function Home() {
 
     try {
       const result = await submitContactForm(contactData);
-      showFormMessage(result);
       
       if (result.result === 'success') {
+        // Show custom success message for contact form
+        showContactSuccessMessage();
         form.reset();
       }
     } catch (error) {
