@@ -508,14 +508,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Building Background between Vision and Solution sections */}
+      {/* Building Background closer to Vision section */}
       <div 
-        className="relative bg-no-repeat opacity-40 pointer-events-none py-24"
+        className="relative bg-no-repeat opacity-40 pointer-events-none py-12"
         style={{
           backgroundImage: `url('${typeof window !== 'undefined' && window.location.hostname === 'real-estatico.github.io' ? '/amido/buildings-background/ChatGPT Image Oct 8, 2025, 11_02_37 PM.png' : '/buildings-background/ChatGPT Image Oct 8, 2025, 11_02_37 PM.png'}')`,
-          backgroundSize: 'contain',
+          backgroundSize: 'cover',
           backgroundPosition: 'center',
-          width: '98%',
+          width: '100vw',
           height: '300px',
           left: '50%',
           transform: 'translateX(-50%)'
