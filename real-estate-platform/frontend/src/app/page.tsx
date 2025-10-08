@@ -221,19 +221,19 @@ export default function Home() {
             
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-12 space-x-reverse">
-              <Link href="#features" className="text-white/70 hover:text-white text-sm font-luxury-body transition-all duration-300 tracking-wider uppercase">
+              <Link href="#features" className="text-white/70 hover:text-white text-sm font-luxury-body transition-all duration-300 tracking-wider uppercase" onClick={(e) => { e.preventDefault(); document.getElementById('features')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>
                 למה לבחור ב-Amido
               </Link>
-              <Link href="#vision" className="text-white/70 hover:text-white text-sm font-luxury-body transition-all duration-300 tracking-wider uppercase">
+              <Link href="#vision" className="text-white/70 hover:text-white text-sm font-luxury-body transition-all duration-300 tracking-wider uppercase" onClick={(e) => { e.preventDefault(); document.getElementById('vision')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>
                 החזון שלנו
               </Link>
-              <Link href="#solution" className="text-white/70 hover:text-white text-sm font-luxury-body transition-all duration-300 tracking-wider uppercase">
+              <Link href="#solution" className="text-white/70 hover:text-white text-sm font-luxury-body transition-all duration-300 tracking-wider uppercase" onClick={(e) => { e.preventDefault(); document.getElementById('solution')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>
                 הפתרון שלנו
               </Link>
-              <Link href="#about" className="text-white/70 hover:text-white text-sm font-luxury-body transition-all duration-300 tracking-wider uppercase">
+              <Link href="#about" className="text-white/70 hover:text-white text-sm font-luxury-body transition-all duration-300 tracking-wider uppercase" onClick={(e) => { e.preventDefault(); document.getElementById('about')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>
                 אודותינו
               </Link>
-              <Link href="#contact" className="text-white/70 hover:text-white text-sm font-luxury-body transition-all duration-300 tracking-wider uppercase">
+              <Link href="#contact" className="text-white/70 hover:text-white text-sm font-luxury-body transition-all duration-300 tracking-wider uppercase" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>
                 צור קשר
               </Link>
               <Link href="/register" className="text-white/70 hover:text-white text-sm font-luxury-body transition-all duration-300 tracking-wider uppercase border border-white/30 px-6 py-2 hover:bg-white/10">
@@ -264,35 +264,35 @@ export default function Home() {
                 <Link 
                   href="#features" 
                   className="block px-3 py-2 text-white/70 hover:text-white text-sm font-luxury-body transition-all duration-300 tracking-wider uppercase"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => { e.preventDefault(); setIsMobileMenuOpen(false); document.getElementById('features')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}
                 >
                   למה לבחור ב-Amido
                 </Link>
                 <Link 
                   href="#vision" 
                   className="block px-3 py-2 text-white/70 hover:text-white text-sm font-luxury-body transition-all duration-300 tracking-wider uppercase"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => { e.preventDefault(); setIsMobileMenuOpen(false); document.getElementById('vision')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}
                 >
                   החזון שלנו
                 </Link>
                 <Link 
                   href="#solution" 
                   className="block px-3 py-2 text-white/70 hover:text-white text-sm font-luxury-body transition-all duration-300 tracking-wider uppercase"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => { e.preventDefault(); setIsMobileMenuOpen(false); document.getElementById('solution')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}
                 >
                   הפתרון שלנו
                 </Link>
                 <Link 
                   href="#about" 
                   className="block px-3 py-2 text-white/70 hover:text-white text-sm font-luxury-body transition-all duration-300 tracking-wider uppercase"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => { e.preventDefault(); setIsMobileMenuOpen(false); document.getElementById('about')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}
                 >
                   אודותינו
                 </Link>
                 <Link 
                   href="#contact" 
                   className="block px-3 py-2 text-white/70 hover:text-white text-sm font-luxury-body transition-all duration-300 tracking-wider uppercase"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => { e.preventDefault(); setIsMobileMenuOpen(false); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}
                 >
                   צור קשר
                 </Link>
@@ -334,7 +334,7 @@ export default function Home() {
       </section>
 
       {/* Features Section (Vertical Layout with Image-Text Alternating) */}
-      <section id="features" className="py-32 bg-black relative z-20">
+      <section id="features" className="py-48 bg-black relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial="hidden"
@@ -401,7 +401,7 @@ export default function Home() {
       </section>
 
       {/* Vision Section (with gray background, no image, no borders) */}
-      <section id="vision" className="py-24 bg-black relative z-20">
+      <section id="vision" className="py-48 bg-black relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial="hidden"
@@ -456,7 +456,7 @@ export default function Home() {
 
 
       {/* Solution Section (Issue vs Solution layout with white borders) */}
-      <section id="solution" className="py-24 bg-black relative z-10">
+      <section id="solution" className="py-48 bg-black relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial="hidden"
@@ -627,7 +627,7 @@ export default function Home() {
       </section>
 
       {/* About Us Section */}
-      <section id="about" className="py-24 bg-black relative z-10">
+      <section id="about" className="py-48 bg-black relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial="hidden"
@@ -671,7 +671,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-black relative z-10">
+      <section id="contact" className="py-48 bg-black relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial="hidden"
