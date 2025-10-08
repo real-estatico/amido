@@ -277,24 +277,24 @@ export default function Home() {
               whileInView="visible"
               viewport={{ once: false, amount: 0.1 }}
               variants={fadeInUp}
-              className="relative bg-gray-200 shadow-2xl p-12 min-h-[500px] flex items-center"
+              className="relative bg-slate-900/50 backdrop-blur-sm p-12 min-h-[500px] flex items-center"
             >
               
               {/* Content */}
               <div className="relative z-10">
-                <p className="text-xl text-slate-800 leading-relaxed mb-8 font-luxury-body">
+                <p className="text-xl text-white/90 leading-relaxed mb-8 font-luxury-body">
                   החזון שלנו הוא להנגיש את עולם ההשקעות בנדלן, כך שגם משקיעים פרטיים יוכלו להנות מהזדמנויות יוצאות דופן.
                 </p>
                 
-                <p className="text-xl text-slate-800 leading-relaxed mb-8 font-luxury-body">
+                <p className="text-xl text-white/90 leading-relaxed mb-8 font-luxury-body">
                   אנו שואפים לבנות קהילת משקיעים איכותית ומובילה המבוססת על אמון, שקיפות ומקצועיות שתעניק לחבריה - גישה לעסקאות פרי-סייל ייחודיות בתנאים מועדפים, ליווי משפטי ומקצועי המבטיח ביטחון ושקט נפשי לאורך כל הדרך וחווית השתייכות לקבוצה חזקה, ערכית וחדשנית המשלבת בין הון כלכלי להון אנושי.
                 </p>
                 
-                <p className="text-xl text-slate-800 leading-relaxed mb-8 font-luxury-body">
+                <p className="text-xl text-white/90 leading-relaxed mb-8 font-luxury-body">
                   מעבר לעסקאות אנו יוצרים פלטפורמה חברתית המשלבת כנסים, מפגשים ותוכן מקצועי ברמה הגבוהה ביותר ההופכים כל השקעה לחוויה מעצימה ומשמעותית.
                 </p>
                 
-                <p className="text-xl text-slate-800 leading-relaxed font-luxury-body">
+                <p className="text-xl text-white/90 leading-relaxed font-luxury-body">
                   אנו רואים בקבוצה הזו את הבסיס למותג השקעות נדל״ן מוביל בישראל. הזדמנות אמיתית לצמיחה כלכלית וחברתית.
                 </p>
               </div>
