@@ -454,16 +454,17 @@ export default function Home() {
       </section>
 
 
+      {/* Building Background - Fixed background for all lower sections */}
+      <div 
+        className="fixed inset-0 bg-no-repeat bg-center opacity-15 pointer-events-none z-0"
+        style={{
+          backgroundImage: `url('/buildings-background/black-background .jpg')`,
+          backgroundSize: 'contain'
+        }}
+      ></div>
+
       {/* Solution Section (Issue vs Solution layout with white borders) */}
       <section id="solution" className="py-24 bg-black relative z-10">
-        {/* Building Background Image - centered in solution section */}
-        <div 
-          className="absolute inset-0 bg-no-repeat bg-center opacity-15 pointer-events-none"
-          style={{
-            backgroundImage: `url('/buildings-background/black-background .jpg')`,
-            backgroundSize: 'contain'
-          }}
-        ></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial="hidden"
