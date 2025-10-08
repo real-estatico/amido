@@ -8,13 +8,17 @@ import { submitContactForm, showFormMessage } from "../utils/formSubmission";
 
 // Function to get all background images dynamically
 const getAllBackgroundImages = () => {
-  // Use relative paths that work for both local and production
+  // Check if we're on GitHub Pages (production) or local development
+  const isProduction = typeof window !== 'undefined' && window.location.hostname === 'real-estatico.github.io';
+  const prefix = isProduction ? '/amido' : '';
+  
+  // List of background images
   const backgroundImages = [
-    '/background/pexels-brett-sayles-2606383.jpg',
-    '/background/pexels-expect-best-79873-351262.jpg',
-    '/background/pexels-pixabay-259950.jpg',
-    '/background/pexels-sevenstormphotography-409842.jpg',
-    '/background/pexels-sevenstormphotography-425122.jpg'
+    `${prefix}/background/pexels-brett-sayles-2606383.jpg`,
+    `${prefix}/background/pexels-expect-best-79873-351262.jpg`,
+    `${prefix}/background/pexels-pixabay-259950.jpg`,
+    `${prefix}/background/pexels-sevenstormphotography-409842.jpg`,
+    `${prefix}/background/pexels-sevenstormphotography-425122.jpg`
   ];
   
   return backgroundImages;
@@ -209,11 +213,15 @@ export default function Home() {
 
   // Function to get features images dynamically
   const getFeaturesImages = () => {
-    // Use relative paths that work for both local and production
+    // Check if we're on GitHub Pages (production) or local development
+    const isProduction = typeof window !== 'undefined' && window.location.hostname === 'real-estatico.github.io';
+    const prefix = isProduction ? '/amido' : '';
+    
+    // List of available features images
     const featuresImages = [
-      '/features/pexels-brett-sayles-2606383.jpg',
-      '/features/pexels-pixabay-358530.jpg', 
-      '/features/pexels-sevenstormphotography-443383.jpg'
+      `${prefix}/features/pexels-brett-sayles-2606383.jpg`,
+      `${prefix}/features/pexels-pixabay-358530.jpg`, 
+      `${prefix}/features/pexels-sevenstormphotography-443383.jpg`
     ];
     
     return featuresImages;
@@ -505,7 +513,7 @@ export default function Home() {
       <div 
         className="relative bg-no-repeat pointer-events-none py-24 mx-auto -mt-8"
         style={{
-          backgroundImage: `url('/buildings-background/ChatGPT Image Oct 8, 2025, 11_02_37 PM.png')`,
+          backgroundImage: `url('${typeof window !== 'undefined' && window.location.hostname === 'real-estatico.github.io' ? '/amido/buildings-background/ChatGPT Image Oct 8, 2025, 11_02_37 PM.png' : '/buildings-background/ChatGPT Image Oct 8, 2025, 11_02_37 PM.png'}')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           width: '60%',
