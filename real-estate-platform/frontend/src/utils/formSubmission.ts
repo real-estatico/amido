@@ -33,7 +33,7 @@ interface RegistrationFormData {
 }
 
 // Replace this URL with your deployed Google Apps Script URL
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyBvvmslpIpkqH-WcuS1NUNqiLEx4SCpmddn0lK0dco5wsRVLMWHBtpYMxWCotB2rbM/exec';
 
 export async function submitContactForm(formData: ContactFormData): Promise<FormSubmissionResult> {
   try {
