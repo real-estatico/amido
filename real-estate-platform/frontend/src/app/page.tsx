@@ -464,7 +464,7 @@ export default function Home() {
             backgroundImage: `url('${typeof window !== 'undefined' && window.location.hostname === 'real-estatico.github.io' ? '/amido/buildings-background/ChatGPT Image Oct 8, 2025, 11_02_37 PM.png' : '/buildings-background/ChatGPT Image Oct 8, 2025, 11_02_37 PM.png'}')`,
             backgroundSize: 'contain',
             backgroundPosition: 'center bottom',
-            width: '95%',
+            width: '98%',
             height: '60%',
             bottom: '0',
             left: '50%',
