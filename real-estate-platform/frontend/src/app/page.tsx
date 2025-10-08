@@ -334,26 +334,26 @@ export default function Home() {
             {/* Issue 1 vs Solution 1 */}
             <motion.div 
               variants={staggerItem}
-              className="flex flex-col md:flex-row items-center min-h-[300px] border-2 border-white/30"
+              className="flex flex-col md:flex-row items-center min-h-[200px] border border-sky-300/20 bg-slate-900/30 backdrop-blur-sm"
             >
               {/* Solution Section */}
-              <div className="w-full md:w-1/2 p-12 bg-slate-900 flex flex-col justify-center border-r-2 border-white/30">
+              <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-sky-500/10 to-slate-900/50 flex flex-col justify-center border-r border-sky-300/20">
                 <div className="flex items-start">
-                  <span className="text-green-400 text-2xl ml-4 mt-1">✓</span>
+                  <span className="text-sky-400 text-xl ml-3 mt-1">✓</span>
                   <div>
-                    <h4 className="text-3xl font-bold text-white mb-6">מיקסום ערך ההשקעה</h4>
-                    <p className="text-lg text-white/90 leading-relaxed">ניצול כח הקבוצה להשגת הנחות משמעותיות, תנאי מימון נוחים ותנאים מסחריים מיטביים.</p>
+                    <h4 className="text-2xl font-bold text-white mb-3 font-luxury-heading">מיקסום ערך ההשקעה</h4>
+                    <p className="text-base text-white/90 leading-relaxed font-luxury-body">ניצול כח הקבוצה להשגת הנחות משמעותיות, תנאי מימון נוחים ותנאים מסחריים מיטביים.</p>
                   </div>
                 </div>
               </div>
               
               {/* Issue Section */}
-              <div className="w-full md:w-1/2 p-12 bg-slate-800 flex flex-col justify-center border-l-2 border-white/30">
+              <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-slate-800/50 to-red-500/10 flex flex-col justify-center border-l border-red-300/20">
                 <div className="flex items-start">
-                  <span className="text-red-400 text-2xl ml-4 mt-1">✗</span>
+                  <span className="text-red-400 text-xl ml-3 mt-1">✗</span>
                   <div>
-                    <h4 className="text-3xl font-bold text-white mb-6">מחירים ותנאים</h4>
-                    <p className="text-lg text-white/90 leading-relaxed">משקיע פרטי לא מצליח להשיג הנחות והטבות שמקבלות קבוצות גדולות או גופים מוסדיים.</p>
+                    <h4 className="text-2xl font-bold text-white mb-3 font-luxury-heading">מחירים ותנאים</h4>
+                    <p className="text-base text-white/90 leading-relaxed font-luxury-body">משקיע פרטי לא מצליח להשיג הנחות והטבות שמקבלות קבוצות גדולות או גופים מוסדיים.</p>
                   </div>
                 </div>
               </div>
@@ -362,26 +362,26 @@ export default function Home() {
             {/* Issue 2 vs Solution 2 */}
             <motion.div 
               variants={staggerItem}
-              className="flex flex-col md:flex-row items-center min-h-[300px] border-t-2 border-white/30"
+              className="flex flex-col md:flex-row items-center min-h-[200px] border border-sky-300/20 bg-slate-900/30 backdrop-blur-sm"
             >
               {/* Solution Section */}
-              <div className="w-full md:w-1/2 p-12 bg-slate-900 flex flex-col justify-center border-r-2 border-white/30">
+              <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-sky-500/10 to-slate-900/50 flex flex-col justify-center border-r border-sky-300/20">
                 <div className="flex items-start">
-                  <span className="text-green-400 text-2xl ml-4 mt-1">✓</span>
+                  <span className="text-sky-400 text-xl ml-3 mt-1">✓</span>
                   <div>
-                    <h4 className="text-3xl font-bold text-white mb-6">הנגשת הזדמנויות בלעדיות</h4>
-                    <p className="text-lg text-white/90 leading-relaxed">לתת למשקיעים פרטיים עסקאות פרי-סייל ייחודיות במחירים ותנאים שלא קיימים בשוק החופשי.</p>
+                    <h4 className="text-2xl font-bold text-white mb-3 font-luxury-heading">הנגשת הזדמנויות בלעדיות</h4>
+                    <p className="text-base text-white/90 leading-relaxed font-luxury-body">לתת למשקיעים פרטיים עסקאות פרי-סייל ייחודיות במחירים ותנאים שלא קיימים בשוק החופשי.</p>
                   </div>
                 </div>
               </div>
               
               {/* Issue Section */}
-              <div className="w-full md:w-1/2 p-12 bg-slate-800 flex flex-col justify-center border-l-2 border-white/30">
+              <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-slate-800/50 to-red-500/10 flex flex-col justify-center border-l border-red-300/20">
                 <div className="flex items-start">
-                  <span className="text-red-400 text-2xl ml-4 mt-1">✗</span>
+                  <span className="text-red-400 text-xl ml-3 mt-1">✗</span>
                   <div>
-                    <h4 className="text-3xl font-bold text-white mb-6">גישה לעסקאות פרי-סייל</h4>
-                    <p className="text-lg text-white/90 leading-relaxed">העסקאות המשתלמות נסגרות מאחורי הקלעים הרבה לפני שהציבור הרחב נחשף אליהן.</p>
+                    <h4 className="text-2xl font-bold text-white mb-3 font-luxury-heading">גישה לעסקאות פרי-סייל</h4>
+                    <p className="text-base text-white/90 leading-relaxed font-luxury-body">העסקאות המשתלמות נסגרות מאחורי הקלעים הרבה לפני שהציבור הרחב נחשף אליהן.</p>
                   </div>
                 </div>
               </div>
@@ -390,26 +390,26 @@ export default function Home() {
             {/* Issue 3 vs Solution 3 */}
             <motion.div 
               variants={staggerItem}
-              className="flex flex-col md:flex-row items-center min-h-[300px] border-t-2 border-white/30"
+              className="flex flex-col md:flex-row items-center min-h-[200px] border border-sky-300/20 bg-slate-900/30 backdrop-blur-sm"
             >
               {/* Solution Section */}
-              <div className="w-full md:w-1/2 p-12 bg-slate-900 flex flex-col justify-center border-r-2 border-white/30">
+              <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-sky-500/10 to-slate-900/50 flex flex-col justify-center border-r border-sky-300/20">
                 <div className="flex items-start">
-                  <span className="text-green-400 text-2xl ml-4 mt-1">✓</span>
+                  <span className="text-sky-400 text-xl ml-3 mt-1">✓</span>
                   <div>
-                    <h4 className="text-3xl font-bold text-white mb-6">ביטחון ושקיפות מלאה</h4>
-                    <p className="text-lg text-white/90 leading-relaxed">צוות משפטי וכלי בדיקה קפדניים שמבטיחים ליווי אישי ושקיפות מלאה בכל שלב.</p>
+                    <h4 className="text-2xl font-bold text-white mb-3 font-luxury-heading">ביטחון ושקיפות מלאה</h4>
+                    <p className="text-base text-white/90 leading-relaxed font-luxury-body">צוות משפטי וכלי בדיקה קפדניים שמבטיחים ליווי אישי ושקיפות מלאה בכל שלב.</p>
                   </div>
                 </div>
               </div>
               
               {/* Issue Section */}
-              <div className="w-full md:w-1/2 p-12 bg-slate-800 flex flex-col justify-center border-l-2 border-white/30">
+              <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-slate-800/50 to-red-500/10 flex flex-col justify-center border-l border-red-300/20">
                 <div className="flex items-start">
-                  <span className="text-red-400 text-2xl ml-4 mt-1">✗</span>
+                  <span className="text-red-400 text-xl ml-3 mt-1">✗</span>
                   <div>
-                    <h4 className="text-3xl font-bold text-white mb-6">ליווי מקצועי</h4>
-                    <p className="text-lg text-white/90 leading-relaxed">משקיעים רבים פועלים לבדם, ללא עורכי דין המגנים עליהם או אנשי מקצוע הבוחנים את טיב העסקה לעומק.</p>
+                    <h4 className="text-2xl font-bold text-white mb-3 font-luxury-heading">ליווי מקצועי</h4>
+                    <p className="text-base text-white/90 leading-relaxed font-luxury-body">משקיעים רבים פועלים לבדם, ללא עורכי דין המגנים עליהם או אנשי מקצוע הבוחנים את טיב העסקה לעומק.</p>
                   </div>
                 </div>
               </div>
@@ -418,26 +418,26 @@ export default function Home() {
             {/* Issue 4 vs Solution 4 */}
             <motion.div 
               variants={staggerItem}
-              className="flex flex-col md:flex-row items-center min-h-[300px] border-t-2 border-white/30"
+              className="flex flex-col md:flex-row items-center min-h-[200px] border border-sky-300/20 bg-slate-900/30 backdrop-blur-sm"
             >
               {/* Solution Section */}
-              <div className="w-full md:w-1/2 p-12 bg-slate-900 flex flex-col justify-center border-r-2 border-white/30">
+              <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-sky-500/10 to-slate-900/50 flex flex-col justify-center border-r border-sky-300/20">
                 <div className="flex items-start">
-                  <span className="text-green-400 text-2xl ml-4 mt-1">✓</span>
+                  <span className="text-sky-400 text-xl ml-3 mt-1">✓</span>
                   <div>
-                    <h4 className="text-3xl font-bold text-white mb-6">קהילה איכותית ומובילה</h4>
-                    <p className="text-lg text-white/90 leading-relaxed">חיבור בין אנשים בעלי ערכים משותפים, יצירת רשת עסקית וחברתית שתעניק ערך מעבר לעסקה עצמה.</p>
+                    <h4 className="text-2xl font-bold text-white mb-3 font-luxury-heading">קהילה איכותית ומובילה</h4>
+                    <p className="text-base text-white/90 leading-relaxed font-luxury-body">חיבור בין אנשים בעלי ערכים משותפים, יצירת רשת עסקית וחברתית שתעניק ערך מעבר לעסקה עצמה.</p>
                   </div>
                 </div>
               </div>
               
               {/* Issue Section */}
-              <div className="w-full md:w-1/2 p-12 bg-slate-800 flex flex-col justify-center border-l-2 border-white/30">
+              <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-slate-800/50 to-red-500/10 flex flex-col justify-center border-l border-red-300/20">
                 <div className="flex items-start">
-                  <span className="text-red-400 text-2xl ml-4 mt-1">✗</span>
+                  <span className="text-red-400 text-xl ml-3 mt-1">✗</span>
                   <div>
-                    <h4 className="text-3xl font-bold text-white mb-6">שקיפות</h4>
-                    <p className="text-lg text-white/90 leading-relaxed">עודף מידע שיווקי, חוסר בהירות וחוסר אמון פוגעים ביכולות המשקיע להבין את העסקה.</p>
+                    <h4 className="text-2xl font-bold text-white mb-3 font-luxury-heading">שקיפות</h4>
+                    <p className="text-base text-white/90 leading-relaxed font-luxury-body">עודף מידע שיווקי, חוסר בהירות וחוסר אמון פוגעים ביכולות המשקיע להבין את העסקה.</p>
                   </div>
                 </div>
               </div>
@@ -446,26 +446,26 @@ export default function Home() {
             {/* Issue 5 vs Solution 5 */}
             <motion.div 
               variants={staggerItem}
-              className="flex flex-col md:flex-row items-center min-h-[300px] border-t-2 border-white/30"
+              className="flex flex-col md:flex-row items-center min-h-[200px] border border-sky-300/20 bg-slate-900/30 backdrop-blur-sm"
             >
               {/* Solution Section */}
-              <div className="w-full md:w-1/2 p-12 bg-slate-900 flex flex-col justify-center border-r-2 border-white/30">
+              <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-sky-500/10 to-slate-900/50 flex flex-col justify-center border-r border-sky-300/20">
                 <div className="flex items-start">
-                  <span className="text-green-400 text-2xl ml-4 mt-1">✓</span>
+                  <span className="text-sky-400 text-xl ml-3 mt-1">✓</span>
                   <div>
-                    <h4 className="text-3xl font-bold text-white mb-6">אירועים, כנסים ותוכן בלעדי</h4>
-                    <p className="text-lg text-white/90 leading-relaxed">חברי הקבוצה יהנו מגישה לאירועים וכנסים סגורים, מפגשי נטוורקינג יוקרתיים ותוכן מקצועי ייחודי.</p>
+                    <h4 className="text-2xl font-bold text-white mb-3 font-luxury-heading">אירועים, כנסים ותוכן בלעדי</h4>
+                    <p className="text-base text-white/90 leading-relaxed font-luxury-body">חברי הקבוצה יהנו מגישה לאירועים וכנסים סגורים, מפגשי נטוורקינג יוקרתיים ותוכן מקצועי ייחודי.</p>
                   </div>
                 </div>
               </div>
               
               {/* Issue Section */}
-              <div className="w-full md:w-1/2 p-12 bg-slate-800 flex flex-col justify-center border-l-2 border-white/30">
+              <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-slate-800/50 to-red-500/10 flex flex-col justify-center border-l border-red-300/20">
                 <div className="flex items-start">
-                  <span className="text-red-400 text-2xl ml-4 mt-1">✗</span>
+                  <span className="text-red-400 text-xl ml-3 mt-1">✗</span>
                   <div>
-                    <h4 className="text-3xl font-bold text-white mb-6">שייכות</h4>
-                    <p className="text-lg text-white/90 leading-relaxed">משקיעים פרטיים פועלים באופן בודד - "כל אחד לעצמו", ללא קהילה מאוחדת, ללא גב משותף וללא שיתוף ידע היכול להעצים את ההשקעה.</p>
+                    <h4 className="text-2xl font-bold text-white mb-3 font-luxury-heading">שייכות</h4>
+                    <p className="text-base text-white/90 leading-relaxed font-luxury-body">משקיעים פרטיים פועלים באופן בודד - "כל אחד לעצמו", ללא קהילה מאוחדת, ללא גב משותף וללא שיתוף ידע היכול להעצים את ההשקעה.</p>
                   </div>
                 </div>
               </div>
