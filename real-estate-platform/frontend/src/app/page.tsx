@@ -115,7 +115,10 @@ export default function Home() {
       }
     } catch (error) {
       console.error('Form submission error:', error);
-      alert('❌ שגיאה בשליחת הטופס. אנא נסה שוב.');
+      showFormMessage({
+        result: 'error',
+        error: 'שגיאה בשליחת הטופס. אנא נסה שוב.'
+      });
     } finally {
       // Reset button state
       if (submitButton && submitText && submitLoading) {
@@ -629,14 +632,13 @@ export default function Home() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="contact-message" className="block text-white mb-2">הודעה</label>
+                  <label htmlFor="contact-message" className="block text-white mb-2">הודעה (אופציונלי)</label>
                   <textarea 
                     id="contact-message" 
                     name="message"
                     rows={4}
-                    required
                     className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:ring-2 focus:ring-red-900 focus:border-red-900 transition-all duration-300"
-                    placeholder="כתוב את ההודעה שלך כאן"
+                    placeholder="כתוב את ההודעה שלך כאן (אופציונלי)"
                   ></textarea>
                 </div>
                 <button 

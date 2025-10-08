@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Google Apps Script</title>
+</head>
+<body>
+    <h1>Test Google Apps Script Connection</h1>
+    <button onclick="testScript()">Test Script</button>
+    <div id="result"></div>
+
+    <script>
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyBvvmslpIpkqH-WcuS1NUNqiLEx4SCpmddn0lK0dco5wsRVLMWHBtpYMxWCotB2rbM/exec';
+        
+        function testScript() {
+            const params = new URLSearchParams({
+                'Form Type': 'Test Form',
+                'Name': 'Test User',
+                'Email': 'test@example.com',
+                'Phone': '1234567890',
+                'Company': 'Test Company',
+                'Message': 'This is a test message'
+            });
+
+            fetch(`${SCRIPT_URL}?${params.toString()}`, {
+                method: 'GET',
+                mode: 'no-cors'
+            })
+            .then(() => {
+                document.getElementById('result').innerHTML = '✅ Test sent successfully! Check your Google Sheet.';
+            })
+            .catch(error => {
+                document.getElementById('result').innerHTML = '❌ Error: ' + error.message;
+            });
+        }
+    </script>
+</body>
+</html>

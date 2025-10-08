@@ -1,33 +1,57 @@
 // Google Apps Script for Amido Real Estate Platform
 // This script handles form submissions and stores them in Google Sheets
 
-const SHEET_NAME = 'Form Submissions';
+const CONTACT_SHEET_NAME = 'Contact Form Submissions';
+const REGISTRATION_SHEET_NAME = 'Registration Form Submissions';
 const scriptProp = PropertiesService.getScriptProperties();
 
 function initialSetup() {
   const activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet();
   scriptProp.setProperty('key', activeSpreadsheet.getId());
   
-  // Create headers if they don't exist
-  const sheet = activeSpreadsheet.getSheetByName(SHEET_NAME);
-  if (!sheet) {
-    const newSheet = activeSpreadsheet.insertSheet(SHEET_NAME);
-    setupHeaders(newSheet);
+  // Create Contact Form sheet
+  let contactSheet = activeSpreadsheet.getSheetByName(CONTACT_SHEET_NAME);
+  if (!contactSheet) {
+    contactSheet = activeSpreadsheet.insertSheet(CONTACT_SHEET_NAME);
+    setupContactHeaders(contactSheet);
   } else {
-    setupHeaders(sheet);
+    setupContactHeaders(contactSheet);
+  }
+  
+  // Create Registration Form sheet
+  let registrationSheet = activeSpreadsheet.getSheetByName(REGISTRATION_SHEET_NAME);
+  if (!registrationSheet) {
+    registrationSheet = activeSpreadsheet.insertSheet(REGISTRATION_SHEET_NAME);
+    setupRegistrationHeaders(registrationSheet);
+  } else {
+    setupRegistrationHeaders(registrationSheet);
   }
 }
 
-function setupHeaders(sheet) {
+function setupContactHeaders(sheet) {
   const headers = [
     'Timestamp',
-    'Form Type',
+    'Name',
+    'Email',
+    'Phone',
+    'Message'
+  ];
+  
+  sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
+  sheet.getRange(1, 1, 1, headers.length).setFontWeight('bold');
+  sheet.getRange(1, 1, 1, headers.length).setBackground('#4285f4');
+  sheet.getRange(1, 1, 1, headers.length).setFontColor('white');
+  sheet.autoResizeColumns(1, headers.length);
+}
+
+function setupRegistrationHeaders(sheet) {
+  const headers = [
+    'Timestamp',
     'Name',
     'Email',
     'Phone',
     'Company',
     'Message',
-    // Registration form fields
     'Investment Experience',
     'Investment Types',
     'Investment Timeline',
@@ -41,8 +65,9 @@ function setupHeaders(sheet) {
   
   sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
   sheet.getRange(1, 1, 1, headers.length).setFontWeight('bold');
-  sheet.getRange(1, 1, 1, headers.length).setBackground('#4285f4');
+  sheet.getRange(1, 1, 1, headers.length).setBackground('#34a853');
   sheet.getRange(1, 1, 1, headers.length).setFontColor('white');
+  sheet.autoResizeColumns(1, headers.length);
 }
 
 function doGet(e) {
@@ -51,10 +76,38 @@ function doGet(e) {
 
   try {
     const doc = SpreadsheetApp.openById(scriptProp.getProperty('key'));
-    const sheet = doc.getSheetByName(SHEET_NAME);
     
-    if (!sheet) {
-      throw new Error('Sheet not found. Please run initialSetup() first.');
+    // Debug logging
+    console.log('Received parameters:', e.parameter);
+    console.log('Form Type:', e.parameter['Form Type']);
+    console.log('Has Investment Experience:', e.parameter['Investment Experience']);
+    
+    // Determine which sheet to use based on form type
+    let sheet;
+    let formType = e.parameter['Form Type'] || '';
+    
+    // More explicit form detection
+    if (formType === 'Contact Form') {
+      // Contact form - explicitly marked
+      console.log('Routing to Contact Form sheet');
+      sheet = doc.getSheetByName(CONTACT_SHEET_NAME);
+      if (!sheet) {
+        throw new Error('Contact Form sheet not found. Please run initialSetup() first.');
+      }
+    } else if (formType === 'Registration Form' || e.parameter['Investment Experience'] || e.parameter['Investment Amount'] || e.parameter['Investment Types']) {
+      // Registration form - explicitly marked or has investment fields
+      console.log('Routing to Registration Form sheet');
+      sheet = doc.getSheetByName(REGISTRATION_SHEET_NAME);
+      if (!sheet) {
+        throw new Error('Registration Form sheet not found. Please run initialSetup() first.');
+      }
+    } else {
+      // Default to contact form for simple submissions
+      console.log('Defaulting to Contact Form sheet');
+      sheet = doc.getSheetByName(CONTACT_SHEET_NAME);
+      if (!sheet) {
+        throw new Error('Contact Form sheet not found. Please run initialSetup() first.');
+      }
     }
 
     const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
@@ -68,15 +121,22 @@ function doGet(e) {
       return e.parameter[header] || '';
     });
 
+    console.log('Headers:', headers);
+    console.log('New row data:', newRow);
+    console.log('Adding to sheet:', sheet.getName(), 'at row:', nextRow);
+
     sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow]);
 
     // Auto-resize columns
     sheet.autoResizeColumns(1, newRow.length);
 
+    console.log('Data successfully added to sheet');
+
     return ContentService
       .createTextOutput(JSON.stringify({ 
         'result': 'success', 
         'row': nextRow,
+        'sheet': sheet.getName(),
         'message': 'Form submitted successfully!' 
       }))
       .setMimeType(ContentService.MimeType.JSON);

@@ -86,7 +86,10 @@ export default function Register() {
       }
     } catch (error) {
       console.error('Form submission error:', error);
-      alert('❌ שגיאה בשליחת הטופס. אנא נסה שוב.');
+      showFormMessage({
+        result: 'error',
+        error: 'שגיאה בשליחת הטופס. אנא נסה שוב.'
+      });
     } finally {
       setIsSubmitting(false);
     }

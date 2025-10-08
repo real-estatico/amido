@@ -33,7 +33,7 @@ interface RegistrationFormData {
 }
 
 // Replace this URL with your deployed Google Apps Script URL
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyBvvmslpIpkqH-WcuS1NUNqiLEx4SCpmddn0lK0dco5wsRVLMWHBtpYMxWCotB2rbM/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzALH3cNv2IihdK6KmbAuAnkvRAF-VJXtNjBJvXufH1Uep99rNuExl-FhIea6lqVidA/exec';
 
 export async function submitContactForm(formData: ContactFormData): Promise<FormSubmissionResult> {
   try {
@@ -109,11 +109,38 @@ export async function submitRegistrationForm(formData: RegistrationFormData): Pr
 
 // Helper function to show success/error messages
 export function showFormMessage(result: FormSubmissionResult, isSuccess: boolean = false) {
-  if (result.result === 'success') {
-    alert('✅ ' + (result.message || 'Form submitted successfully!'));
-    return true;
-  } else {
-    alert('❌ Error: ' + (result.error || 'Failed to submit form. Please try again.'));
-    return false;
+  const modal = document.createElement('div');
+  modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+  
+  const isSuccessResult = result.result === 'success';
+  const icon = isSuccessResult ? '✅' : '❌';
+  const title = isSuccessResult ? 'הטופס נשלח בהצלחה!' : 'שגיאה בשליחת הטופס';
+  const message = isSuccessResult ? 'תודה רבה! נחזור אליך בהקדם.' : (result.error || 'אירעה שגיאה לא צפויה. אנא נסה שוב.');
+  
+  modal.innerHTML = `
+    <div class="bg-white rounded-lg p-8 max-w-md mx-4 text-center shadow-xl">
+      <div class="text-6xl mb-4">${icon}</div>
+      <h3 class="text-2xl font-bold mb-4 text-gray-800">${title}</h3>
+      <p class="text-gray-600 mb-6">${message}</p>
+      <button 
+        onclick="this.closest('.fixed').remove()" 
+        class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+      >
+        סגור
+      </button>
+    </div>
+  `;
+  
+  document.body.appendChild(modal);
+  
+  // Auto-remove after 5 seconds for success messages
+  if (isSuccessResult) {
+    setTimeout(() => {
+      if (modal.parentNode) {
+        modal.remove();
+      }
+    }, 5000);
   }
+  
+  return isSuccessResult;
 }
