@@ -804,142 +804,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Terms of Use Section */}
-      <section id="terms" className="py-24 bg-black relative z-10">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.1 }}
-            variants={fadeInUp}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-luxury-display">
-              תנאי שימוש
-            </h2>
-            <div className="w-32 h-1 mx-auto mb-6" style={{
-              background: 'linear-gradient(to right, transparent 0%, #991b1b 20%, #991b1b 80%, transparent 100%)'
-            }}></div>
-          </motion.div>
-          
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.1 }}
-            variants={fadeInUp}
-            className="prose prose-invert max-w-none"
-          >
-            <div className="text-white/90 leading-relaxed space-y-6">
-              <div>
-                <h3 className="text-2xl font-bold text-white mb-4 font-luxury-heading">1. כללי</h3>
-                <p className="text-white/90 leading-relaxed font-luxury-body">
-                  תנאי שימוש אלו חלים על השימוש באתר של קבוצת Amido ("האתר"). השימוש באתר מהווה הסכמה מלאה לתנאים אלו.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="text-2xl font-bold text-white mb-4 font-luxury-heading">2. שימוש באתר</h3>
-                <p className="text-white/90 leading-relaxed font-luxury-body">
-                  האתר מיועד למטרות מידע בלבד. אסור להשתמש באתר למטרות בלתי חוקיות או בניגוד לתנאים אלו.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="text-2xl font-bold text-white mb-4 font-luxury-heading">3. זכויות יוצרים</h3>
-                <p className="text-white/90 leading-relaxed font-luxury-body">
-                  כל התוכן באתר, כולל טקסטים, תמונות, לוגואים ועיצוב, מוגן בזכויות יוצרים ומהווה קניין של קבוצת Amido.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="text-2xl font-bold text-white mb-4 font-luxury-heading">4. הגבלת אחריות</h3>
-                <p className="text-white/90 leading-relaxed font-luxury-body">
-                  קבוצת Amido אינה אחראית לכל נזק ישיר או עקיף שייגרם כתוצאה משימוש באתר.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="text-2xl font-bold text-white mb-4 font-luxury-heading">5. שינויים</h3>
-                <p className="text-white/90 leading-relaxed font-luxury-body">
-                  אנו שומרים לעצמנו את הזכות לשנות תנאים אלו בכל עת. השינויים ייכנסו לתוקף מייד עם פרסומם באתר.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Privacy Policy Section */}
-      <section id="privacy" className="py-24 bg-black relative z-10">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.1 }}
-            variants={fadeInUp}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-luxury-display">
-              מדיניות פרטיות
-            </h2>
-            <div className="w-32 h-1 mx-auto mb-6" style={{
-              background: 'linear-gradient(to right, transparent 0%, #991b1b 20%, #991b1b 80%, transparent 100%)'
-            }}></div>
-          </motion.div>
-          
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.1 }}
-            variants={fadeInUp}
-            className="prose prose-invert max-w-none"
-          >
-            <div className="text-white/90 leading-relaxed space-y-6">
-              <div>
-                <h3 className="text-2xl font-bold text-white mb-4 font-luxury-heading">1. איסוף מידע</h3>
-                <p className="text-white/90 leading-relaxed font-luxury-body">
-                  אנו אוספים מידע אישי שתספק לנו מרצונך, כולל שם, כתובת אימייל, מספר טלפון ופרטים נוספים.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="text-2xl font-bold text-white mb-4 font-luxury-heading">2. שימוש במידע</h3>
-                <p className="text-white/90 leading-relaxed font-luxury-body">
-                  המידע שאנו אוספים משמש אותנו לצורך מתן שירותים, יצירת קשר עמך ופיתוח מוצרים ושירותים חדשים.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="text-2xl font-bold text-white mb-4 font-luxury-heading">3. הגנת המידע</h3>
-                <p className="text-white/90 leading-relaxed font-luxury-body">
-                  אנו נוקטים באמצעי אבטחה מתאימים להגנה על המידע האישי שלך מפני גישה לא מורשית, שימוש לרעה או חשיפה.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="text-2xl font-bold text-white mb-4 font-luxury-heading">4. שיתוף מידע</h3>
-                <p className="text-white/90 leading-relaxed font-luxury-body">
-                  אנו לא נמכור, נשכיר או נחלוק את המידע האישי שלך עם צדדים שלישיים ללא הסכמתך המפורשת.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="text-2xl font-bold text-white mb-4 font-luxury-heading">5. זכויותיך</h3>
-                <p className="text-white/90 leading-relaxed font-luxury-body">
-                  יש לך זכות לגשת למידע האישי שלך, לתקן אותו, למחוק אותו או להגביל את השימוש בו. ניתן לפנות אלינו בכל עת.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="text-2xl font-bold text-white mb-4 font-luxury-heading">6. קשר</h3>
-                <p className="text-white/90 leading-relaxed font-luxury-body">
-                  לשאלות בנושא מדיניות פרטיות, ניתן לפנות אלינו בכתובת: info@amido.co.il או בטלפון: 03-1234567
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Footer */}
       <footer className="bg-black py-12 relative z-10">
@@ -953,8 +817,8 @@ export default function Home() {
               כתובת: רחוב דיזנגוף 100, תל אביב | טלפון: 03-1234567 | אימייל: info@amido.co.il
             </p>
             <div className="flex justify-center space-x-6 space-x-reverse">
-              <Link href="#terms" className="text-white/60 hover:text-white transition-colors" onClick={(e) => { e.preventDefault(); document.getElementById('terms')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>תנאי שימוש</Link>
-              <Link href="#privacy" className="text-white/60 hover:text-white transition-colors" onClick={(e) => { e.preventDefault(); document.getElementById('privacy')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>מדיניות פרטיות</Link>
+              <Link href="/terms" className="text-white/60 hover:text-white transition-colors">תנאי שימוש</Link>
+              <Link href="/privacy" className="text-white/60 hover:text-white transition-colors">מדיניות פרטיות</Link>
               <Link href="#contact" className="text-white/60 hover:text-white transition-colors" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>צור קשר</Link>
             </div>
           </div>
