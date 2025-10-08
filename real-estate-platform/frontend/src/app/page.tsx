@@ -224,6 +224,13 @@ export default function Home() {
       `${prefix}/features/pexels-sevenstormphotography-443383.jpg`
     ];
     
+    // Debug logging
+    if (typeof window !== 'undefined') {
+      console.log('Features images paths:', featuresImages);
+      console.log('Is production:', isProduction);
+      console.log('Prefix:', prefix);
+    }
+    
     return featuresImages;
   };
 
@@ -426,9 +433,13 @@ export default function Home() {
                 }`}
               >
                 {/* Image Section */}
-                <div className="relative w-full lg:w-1/2 h-[250px] sm:h-[300px] lg:h-[400px] bg-cover bg-center bg-no-repeat"
+                <div className="relative w-full lg:w-1/2 h-[250px] sm:h-[300px] lg:h-[400px] bg-cover bg-center bg-no-repeat bg-gray-800"
                   style={{
                     backgroundImage: `url('${card.backgroundImage}')`
+                  }}
+                  onError={(e) => {
+                    console.error('Failed to load image:', card.backgroundImage);
+                    console.error('Image element:', e.target);
                   }}
                 >
                   {/* Fade effect to background */}
