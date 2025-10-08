@@ -329,7 +329,7 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: false, amount: 0.1 }}
             variants={staggerContainer}
-            className="space-y-0 max-w-6xl mx-auto"
+            className="space-y-16 max-w-6xl mx-auto"
           >
             {featuresCards.map((card, index) => (
               <motion.div 
@@ -697,7 +697,7 @@ export default function Home() {
                     id="contact-phone" 
                     name="phone"
                     required
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:ring-2 focus:ring-red-900 focus:border-red-900 transition-all duration-300 text-sm sm:text-base"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:ring-2 focus:ring-red-900 focus:border-red-900 transition-all duration-300 text-sm sm:text-base text-right"
                     placeholder="הכנס את מספר הטלפון שלך"
                   />
                 </div>
