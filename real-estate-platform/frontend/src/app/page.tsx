@@ -459,14 +459,16 @@ export default function Home() {
       <section id="vision" className="py-48 bg-black relative z-20">
         {/* Building Background for Vision Section */}
         <div 
-          className="absolute inset-0 bg-no-repeat bg-center opacity-30 pointer-events-none"
+          className="absolute bg-no-repeat opacity-25 pointer-events-none"
           style={{
-            backgroundImage: `url('/buildings-background/black-background .jpg')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            width: '100vw',
-            left: '50%',
-            transform: 'translateX(-50%)'
+            backgroundImage: `url('${typeof window !== 'undefined' && window.location.hostname === 'real-estatico.github.io' ? '/amido/buildings-background/black-background .jpg' : '/buildings-background/black-background .jpg'}')`,
+            backgroundSize: 'contain',
+            backgroundPosition: 'center bottom',
+            width: '100%',
+            height: '60%',
+            bottom: '0',
+            left: '0',
+            right: '0'
           }}
         ></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
