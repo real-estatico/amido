@@ -96,7 +96,7 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950" dir="rtl">
+    <div className="min-h-screen bg-black" dir="rtl">
       {/* Navigation */}
       <nav className="bg-slate-900/95 backdrop-blur-lg border-b border-white/20 sticky top-0 z-50 shadow-2xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -116,15 +116,12 @@ export default function Register() {
       </nav>
 
       {/* Header */}
-      <div className="py-20 bg-slate-950">
+      <div className="py-20 bg-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-8 font-luxury-display">
               הצטרפות ל-Amido Group
             </h1>
-            <div className="w-32 h-1 mx-auto mb-8" style={{
-              background: 'linear-gradient(to right, transparent 0%, #991b1b 20%, #991b1b 80%, transparent 100%)'
-            }}></div>
             <div className="bg-slate-800/50 backdrop-blur-sm shadow-2xl border border-white/20 p-12">
               <p className="text-xl text-white leading-relaxed mb-6 font-luxury-body">
                 ברוכים הבאים ל - amido group.
@@ -146,9 +143,6 @@ export default function Register() {
                 <h2 className="text-3xl font-bold text-white mb-8 font-luxury-display">
                   פרטים אישיים
                 </h2>
-                <div className="w-24 h-1 mb-8" style={{
-                  background: 'linear-gradient(to right, transparent 0%, #991b1b 20%, #991b1b 80%, transparent 100%)'
-                }}></div>
                 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
@@ -224,9 +218,6 @@ export default function Register() {
                 <h2 className="text-3xl font-bold text-white mb-8 font-luxury-display">
                   ניסיון השקעות
                 </h2>
-                <div className="w-24 h-1 mb-8" style={{
-                  background: 'linear-gradient(to right, transparent 0%, #991b1b 20%, #991b1b 80%, transparent 100%)'
-                }}></div>
                 
                 <div>
                   <label className="block text-lg font-medium text-white mb-4 font-luxury-accent">
@@ -292,9 +283,6 @@ export default function Register() {
                 <h2 className="text-3xl font-bold text-white mb-8 font-luxury-display">
                   העדפות השקעה
                 </h2>
-                <div className="w-24 h-1 mb-8" style={{
-                  background: 'linear-gradient(to right, transparent 0%, #991b1b 20%, #991b1b 80%, transparent 100%)'
-                }}></div>
                 
                 <div>
                   <label htmlFor="investmentTimeline" className="block text-lg font-medium text-white mb-4 font-luxury-accent">
@@ -341,9 +329,6 @@ export default function Register() {
                 <h2 className="text-3xl font-bold text-white mb-8 font-luxury-display">
                   מטרות השקעה
                 </h2>
-                <div className="w-24 h-1 mb-8" style={{
-                  background: 'linear-gradient(to right, transparent 0%, #991b1b 20%, #991b1b 80%, transparent 100%)'
-                }}></div>
                 
                 <div>
                   <label htmlFor="investmentGoal" className="block text-lg font-medium text-white mb-4 font-luxury-accent">
