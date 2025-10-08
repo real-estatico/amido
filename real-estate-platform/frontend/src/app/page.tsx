@@ -162,7 +162,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-950" dir="rtl">
+    <div className="min-h-screen bg-black" dir="rtl">
       {/* Hero Section Background Image Slideshow (absolute to cover hero only) */}
       <div className="absolute inset-0 z-0" style={{ height: '100vh' }}>
         <div 
@@ -172,8 +172,9 @@ export default function Home() {
             backgroundPosition: "center top"
           }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/70 via-slate-900/50 to-slate-900/80"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-slate-900/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-black/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-black/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30"></div>
       </div>
 
       {/* Navigation */}
@@ -344,17 +345,17 @@ export default function Home() {
                   }}
                 >
                   {/* Fade effect to background */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/20 to-black/40"
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/30 to-black/60"
                     style={{
                       background: index % 2 === 0 
-                        ? 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.3) 100%)'
-                        : 'linear-gradient(to left, transparent 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.3) 100%)'
+                        ? 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.2) 30%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0.7) 100%)'
+                        : 'linear-gradient(to left, transparent 0%, rgba(0,0,0,0.2) 30%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0.7) 100%)'
                     }}
                   ></div>
                 </div>
                 
                 {/* Text Section */}
-                <div className="w-full lg:w-1/2 p-6 sm:p-8 lg:p-12 bg-slate-900 flex flex-col justify-center">
+                <div className="w-full lg:w-1/2 p-6 sm:p-8 lg:p-12 bg-black flex flex-col justify-center">
                   <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
                     {card.title}
                   </h3>
@@ -369,7 +370,7 @@ export default function Home() {
       </section>
 
       {/* Vision Section (with gray background, no image, no borders) */}
-      <section id="vision" className="py-24 bg-slate-950 relative z-10">
+      <section id="vision" className="py-24 bg-black relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial="hidden"
@@ -395,7 +396,7 @@ export default function Home() {
               whileInView="visible"
               viewport={{ once: false, amount: 0.1 }}
               variants={fadeInUp}
-              className="relative bg-slate-900/50 backdrop-blur-sm p-12 min-h-[500px] flex items-center"
+              className="relative bg-black/50 backdrop-blur-sm p-12 min-h-[500px] flex items-center"
             >
               
               {/* Content */}
@@ -422,7 +423,7 @@ export default function Home() {
       </section>
 
       {/* Solution Section (Issue vs Solution layout with white borders) */}
-      <section id="solution" className="py-24 bg-slate-950 relative z-10">
+      <section id="solution" className="py-24 bg-black relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial="hidden"
@@ -452,7 +453,7 @@ export default function Home() {
             {/* Issue 1 vs Solution 1 */}
             <motion.div 
               variants={staggerItem}
-              className="flex flex-col md:flex-row items-center min-h-[200px] border border-sky-300/20 bg-slate-900/30 backdrop-blur-sm"
+              className="flex flex-col md:flex-row items-center min-h-[200px] border border-sky-300/20 bg-black/30 backdrop-blur-sm"
             >
               {/* Solution Section */}
               <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-sky-500/10 to-slate-900/50 flex flex-col justify-center border-r border-sky-300/20">
@@ -480,7 +481,7 @@ export default function Home() {
             {/* Issue 2 vs Solution 2 */}
             <motion.div 
               variants={staggerItem}
-              className="flex flex-col md:flex-row items-center min-h-[200px] border border-sky-300/20 bg-slate-900/30 backdrop-blur-sm"
+              className="flex flex-col md:flex-row items-center min-h-[200px] border border-sky-300/20 bg-black/30 backdrop-blur-sm"
             >
               {/* Solution Section */}
               <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-sky-500/10 to-slate-900/50 flex flex-col justify-center border-r border-sky-300/20">
@@ -508,7 +509,7 @@ export default function Home() {
             {/* Issue 3 vs Solution 3 */}
             <motion.div 
               variants={staggerItem}
-              className="flex flex-col md:flex-row items-center min-h-[200px] border border-sky-300/20 bg-slate-900/30 backdrop-blur-sm"
+              className="flex flex-col md:flex-row items-center min-h-[200px] border border-sky-300/20 bg-black/30 backdrop-blur-sm"
             >
               {/* Solution Section */}
               <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-sky-500/10 to-slate-900/50 flex flex-col justify-center border-r border-sky-300/20">
@@ -536,7 +537,7 @@ export default function Home() {
             {/* Issue 4 vs Solution 4 */}
             <motion.div 
               variants={staggerItem}
-              className="flex flex-col md:flex-row items-center min-h-[200px] border border-sky-300/20 bg-slate-900/30 backdrop-blur-sm"
+              className="flex flex-col md:flex-row items-center min-h-[200px] border border-sky-300/20 bg-black/30 backdrop-blur-sm"
             >
               {/* Solution Section */}
               <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-sky-500/10 to-slate-900/50 flex flex-col justify-center border-r border-sky-300/20">
@@ -564,7 +565,7 @@ export default function Home() {
             {/* Issue 5 vs Solution 5 */}
             <motion.div 
               variants={staggerItem}
-              className="flex flex-col md:flex-row items-center min-h-[200px] border border-sky-300/20 bg-slate-900/30 backdrop-blur-sm"
+              className="flex flex-col md:flex-row items-center min-h-[200px] border border-sky-300/20 bg-black/30 backdrop-blur-sm"
             >
               {/* Solution Section */}
               <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-sky-500/10 to-slate-900/50 flex flex-col justify-center border-r border-sky-300/20">
@@ -593,7 +594,7 @@ export default function Home() {
       </section>
 
       {/* About Us Section */}
-      <section id="about" className="py-24 bg-slate-950 relative z-10">
+      <section id="about" className="py-24 bg-black relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial="hidden"
@@ -637,7 +638,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-slate-950 relative z-10">
+      <section id="contact" className="py-24 bg-black relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial="hidden"
@@ -724,7 +725,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-900 py-12 relative z-10">
+      <footer className="bg-black py-12 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <Logo className="text-white mx-auto mb-6" size="lg" />
