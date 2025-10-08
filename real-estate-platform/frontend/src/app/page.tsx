@@ -457,20 +457,6 @@ export default function Home() {
 
       {/* Vision Section (with gray background, no image, no borders) */}
       <section id="vision" className="py-48 bg-black relative z-20">
-        {/* Building Background for Vision Section */}
-        <div 
-          className="absolute bg-no-repeat opacity-25 pointer-events-none"
-          style={{
-            backgroundImage: `url('${typeof window !== 'undefined' && window.location.hostname === 'real-estatico.github.io' ? '/amido/buildings-background/ChatGPT Image Oct 8, 2025, 11_02_37 PM.png' : '/buildings-background/ChatGPT Image Oct 8, 2025, 11_02_37 PM.png'}')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center bottom',
-            width: '100vw',
-            height: '60%',
-            bottom: '0',
-            left: '50%',
-            transform: 'translateX(-50%)'
-          }}
-        ></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial="hidden"
@@ -489,6 +475,20 @@ export default function Home() {
               החזון שלנו להשקעות נדלן
             </p>
           </motion.div>
+          
+          {/* Building Background between heading and content */}
+          <div 
+            className="relative bg-no-repeat opacity-25 pointer-events-none mb-12"
+            style={{
+              backgroundImage: `url('${typeof window !== 'undefined' && window.location.hostname === 'real-estatico.github.io' ? '/amido/buildings-background/ChatGPT Image Oct 8, 2025, 11_02_37 PM.png' : '/buildings-background/ChatGPT Image Oct 8, 2025, 11_02_37 PM.png'}')`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              width: '100vw',
+              height: '200px',
+              left: '50%',
+              transform: 'translateX(-50%)'
+            }}
+          ></div>
           
           <div className="max-w-5xl mx-auto">
             <motion.div 
