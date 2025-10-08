@@ -454,12 +454,13 @@ export default function Home() {
       </section>
 
 
-      {/* Building Background - Fixed background for all lower sections */}
+      {/* Building Background - Fixed background for all lower sections (not hero) */}
       <div 
-        className="fixed inset-0 bg-no-repeat bg-center opacity-15 pointer-events-none z-0"
+        className="fixed inset-0 bg-no-repeat bg-center opacity-15 pointer-events-none"
         style={{
           backgroundImage: `url('/buildings-background/black-background .jpg')`,
-          backgroundSize: 'contain'
+          backgroundSize: 'contain',
+          zIndex: 1
         }}
       ></div>
 
