@@ -218,7 +218,7 @@ export default function Home() {
     const isProduction = typeof window !== 'undefined' && window.location.hostname === 'real-estatico.github.io';
     const prefix = isProduction ? '/amido' : '';
     
-    // List of available features images
+    // List of available features images with fallback
     const featuresImages = [
       `${prefix}/features/pexels-brett-sayles-2606383.jpg`,
       `${prefix}/features/pexels-pixabay-358530.jpg`, 
@@ -230,6 +230,7 @@ export default function Home() {
       console.log('Features images paths:', featuresImages);
       console.log('Is production:', isProduction);
       console.log('Prefix:', prefix);
+      console.log('Current URL:', window.location.href);
     }
     
     return featuresImages;
@@ -434,15 +435,24 @@ export default function Home() {
                 }`}
               >
                 {/* Image Section */}
-                <div className="relative w-full lg:w-1/2 h-[250px] sm:h-[300px] lg:h-[400px] overflow-hidden">
+                <div className="relative w-full lg:w-1/2 h-[250px] sm:h-[300px] lg:h-[400px] overflow-hidden bg-gray-800">
                   <Image
                     src={card.backgroundImage}
                     alt={card.title}
                     fill
                     className="object-cover"
+                    priority={index < 2}
+                    unoptimized={true}
                     onError={(e) => {
                       console.error('Failed to load image:', card.backgroundImage);
                       console.error('Image element:', e.target);
+                      // Hide the image on error
+                      if (e.target) {
+                        (e.target as HTMLImageElement).style.display = 'none';
+                      }
+                    }}
+                    onLoad={() => {
+                      console.log('Successfully loaded image:', card.backgroundImage);
                     }}
                   />
                   {/* Fade effect to background */}
