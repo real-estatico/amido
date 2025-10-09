@@ -237,6 +237,15 @@ export default function Home() {
 
   // Features cards data
   const featuresImages = getFeaturesImages();
+  
+  // Preload features images for faster loading
+  useEffect(() => {
+    featuresImages.forEach((imageSrc) => {
+      const img = new Image();
+      img.src = imageSrc;
+    });
+  }, [featuresImages]);
+  
   const featuresCards = [
     {
       backgroundImage: featuresImages[0],
@@ -434,23 +443,15 @@ export default function Home() {
                 }`}
               >
                 {/* Image Section */}
-                <div className="relative w-full lg:w-1/2 h-[250px] sm:h-[300px] lg:h-[400px] overflow-hidden bg-gray-800">
-                  <img
-                    src={card.backgroundImage}
-                    alt={card.title}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      console.error('Failed to load image:', card.backgroundImage);
-                      console.error('Image element:', e.target);
-                      // Hide the image on error
-                      if (e.target) {
-                        (e.target as HTMLImageElement).style.display = 'none';
-                      }
-                    }}
-                    onLoad={() => {
-                      console.log('Successfully loaded image:', card.backgroundImage);
-                    }}
-                  />
+                <div 
+                  className="relative w-full lg:w-1/2 h-[250px] sm:h-[300px] lg:h-[400px] bg-cover bg-center bg-no-repeat bg-gray-800"
+                  style={{
+                    backgroundImage: `url('${card.backgroundImage}')`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat'
+                  }}
+                >
                   {/* Fade effect to background */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/30 to-black/60"
                     style={{
