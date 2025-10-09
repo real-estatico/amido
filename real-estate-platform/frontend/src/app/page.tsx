@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Logo from "../components/Logo";
 import { submitContactForm, showFormMessage } from "../utils/formSubmission";
 
@@ -436,13 +435,10 @@ export default function Home() {
               >
                 {/* Image Section */}
                 <div className="relative w-full lg:w-1/2 h-[250px] sm:h-[300px] lg:h-[400px] overflow-hidden bg-gray-800">
-                  <Image
+                  <img
                     src={card.backgroundImage}
                     alt={card.title}
-                    fill
-                    className="object-cover"
-                    priority={index < 2}
-                    unoptimized={true}
+                    className="w-full h-full object-cover"
                     onError={(e) => {
                       console.error('Failed to load image:', card.backgroundImage);
                       console.error('Image element:', e.target);
