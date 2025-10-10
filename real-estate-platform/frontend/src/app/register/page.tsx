@@ -213,7 +213,7 @@ export default function Register() {
                       required
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-6 py-5 bg-slate-700/50 border border-white/20 text-white placeholder-gray-300 focus:ring-2 focus:ring-red-900 focus:border-red-900 transition-all duration-300 font-luxury-body"
+                      className="w-full px-6 py-5 bg-slate-700/50 border border-white/20 text-white placeholder-gray-300 focus:ring-2 focus:ring-red-900 focus:border-red-900 transition-all duration-300 font-luxury-body text-right"
                       placeholder="הכנס את מספר הטלפון שלך"
                     />
                   </div>
@@ -399,12 +399,11 @@ export default function Register() {
 
                 <div>
                   <label htmlFor="projectType" className="block text-lg font-medium text-white mb-4 font-luxury-accent">
-                    איזה סוג פרויקט מדבר אליך יותר? *
+                    איזה סוג פרויקט מדבר אליך יותר?
                   </label>
                   <select
                     id="projectType"
                     name="projectType"
-                    required
                     value={formData.projectType}
                     onChange={handleInputChange}
                     className="w-full px-6 py-5 bg-slate-700/50 border border-white/20 text-white focus:ring-2 focus:ring-red-900 focus:border-red-900 transition-all duration-300 font-luxury-body"
@@ -424,7 +423,7 @@ export default function Register() {
                   קהילה מובילה
                 </h3>
                 <p className="text-white/90 mb-8 text-center leading-relaxed font-luxury-body">
-                  בamido group אנו מאמינים שכח אמיתי נבנה מאנשים. אנחנו יוצרים קהילה סגורה של משקיעים איכותיים - אנשים עם חזרון, אמון וערכין משותפים שנהנים מערך מוסף אמיתי: אירועים בלעדיםם, כנסים מקצועיים, מפגשי נטווריקנג ותוכן שמחבר בין אנשים להזדמנויות.
+                  בamido group אנו מאמינים שכח אמיתי נבנה מאנשים. אנחנו יוצרים קהילה סגורה של משקיעים איכותיים - אנשים עם חזון, אמון וערכין משותפים שנהנים מערך מוסף אמיתי: אירועים בלעדיים, כנסים מקצועיים, מפגשי נטווריקנג ותוכן שמחבר בין אנשים להזדמנויות.
                 </p>
                 
                 <div className="mb-8">
