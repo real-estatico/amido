@@ -8,17 +8,13 @@ import { submitContactForm, showFormMessage } from "../utils/formSubmission";
 
 // Function to get all background images dynamically
 const getAllBackgroundImages = () => {
-  // Check if we're on GitHub Pages (production) or local development
-  const isProduction = typeof window !== 'undefined' && window.location.hostname === 'real-estatico.github.io';
-  const prefix = isProduction ? '/amido' : '';
-  
-  // List of background images
+  // Use simple relative paths that work for both local and production
   const backgroundImages = [
-    `${prefix}/background/pexels-brett-sayles-2606383.jpg`,
-    `${prefix}/background/pexels-expect-best-79873-351262.jpg`,
-    `${prefix}/background/pexels-pixabay-259950.jpg`,
-    `${prefix}/background/pexels-sevenstormphotography-409842.jpg`,
-    `${prefix}/background/pexels-sevenstormphotography-425122.jpg`
+    '/background/pexels-brett-sayles-2606383.jpg',
+    '/background/pexels-expect-best-79873-351262.jpg',
+    '/background/pexels-pixabay-259950.jpg',
+    '/background/pexels-sevenstormphotography-409842.jpg',
+    '/background/pexels-sevenstormphotography-425122.jpg'
   ];
   
   return backgroundImages;
@@ -213,22 +209,16 @@ export default function Home() {
 
   // Function to get features images dynamically
   const getFeaturesImages = () => {
-    // Check if we're on GitHub Pages (production) or local development
-    const isProduction = typeof window !== 'undefined' && window.location.hostname === 'real-estatico.github.io';
-    const prefix = isProduction ? '/amido' : '';
-    
-    // List of available features images with fallback
+    // Use simple relative paths that work for both local and production
     const featuresImages = [
-      `${prefix}/features/pexels-brett-sayles-2606383.jpg`,
-      `${prefix}/features/pexels-pixabay-358530.jpg`, 
-      `${prefix}/features/pexels-sevenstormphotography-443383.jpg`
+      '/features/pexels-brett-sayles-2606383.jpg',
+      '/features/pexels-pixabay-358530.jpg', 
+      '/features/pexels-sevenstormphotography-443383.jpg'
     ];
     
     // Debug logging
     if (typeof window !== 'undefined') {
       console.log('Features images paths:', featuresImages);
-      console.log('Is production:', isProduction);
-      console.log('Prefix:', prefix);
       console.log('Current URL:', window.location.href);
     }
     
@@ -238,11 +228,13 @@ export default function Home() {
   // Features cards data
   const featuresImages = getFeaturesImages();
   
-  // Preload features images for faster loading
+  // Preload features images for instant loading
   useEffect(() => {
     featuresImages.forEach((imageSrc) => {
       const img = new Image();
       img.src = imageSrc;
+      // Force preload
+      img.loading = 'eager';
     });
   }, [featuresImages]);
   
@@ -283,17 +275,19 @@ export default function Home() {
       {/* Navigation */}
       <nav className="bg-transparent backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex justify-between items-center h-16 md:h-20">
+          <div className="flex items-center justify-between h-16 md:h-20">
+            
+            {/* Left Logo */}
             <div className="flex items-center">
               <Link href="#" className="cursor-pointer">
-                <div className="font-luxury-display text-xl md:text-2xl text-white tracking-wider">
-                  AMIDO
+                <div className="font-bold text-xl md:text-2xl text-white tracking-wider" style={{ fontFamily: 'Georgia, serif' }}>
+                  AMIDO <span className="text-red-900">GROUP</span>
                 </div>
               </Link>
             </div>
             
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-12 space-x-reverse">
+            {/* Center Navigation - Evenly Spread */}
+            <div className="hidden lg:flex items-center justify-center flex-1 space-x-8 space-x-reverse">
               <Link href="#features" className="text-white/70 hover:text-white text-sm font-luxury-body transition-all duration-300 tracking-wider uppercase" onClick={(e) => { e.preventDefault(); document.getElementById('features')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>
                 למה לבחור ב-Amido
               </Link>
@@ -301,7 +295,7 @@ export default function Home() {
                 החזון שלנו
               </Link>
               <Link href="#solution" className="text-white/70 hover:text-white text-sm font-luxury-body transition-all duration-300 tracking-wider uppercase" onClick={(e) => { e.preventDefault(); document.getElementById('solution')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>
-                הפתרון שלנו
+                היתרון שלנו
               </Link>
               <Link href="#about" className="text-white/70 hover:text-white text-sm font-luxury-body transition-all duration-300 tracking-wider uppercase" onClick={(e) => { e.preventDefault(); document.getElementById('about')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>
                 אודותינו
@@ -309,6 +303,10 @@ export default function Home() {
               <Link href="#contact" className="text-white/70 hover:text-white text-sm font-luxury-body transition-all duration-300 tracking-wider uppercase" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>
                 צור קשר
               </Link>
+            </div>
+            
+            {/* Right Registration Button */}
+            <div className="hidden lg:flex items-center">
               <Link href="/register" className="text-white/70 hover:text-white text-sm font-luxury-body transition-all duration-300 tracking-wider uppercase border border-white/30 px-6 py-2 hover:bg-white/10">
                 הרשמה
               </Link>
@@ -432,53 +430,35 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: false, amount: 0.1 }}
             variants={staggerContainer}
-            className="space-y-24 max-w-7xl mx-auto"
+            className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
           >
             {featuresCards.map((card, index) => (
               <motion.div 
                 key={index}
                 variants={staggerItem}
-                className={`flex flex-col lg:flex-row items-stretch min-h-[500px] lg:min-h-[600px] ${
-                  index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                }`}
+                className="group relative overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-105 min-h-[500px]"
+                style={{
+                  backgroundImage: `url(${card.backgroundImage})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat'
+                }}
               >
-                {/* Image Section */}
-                <div 
-                  className="relative w-full lg:w-2/5 h-[300px] sm:h-[400px] lg:h-full bg-cover bg-center bg-no-repeat bg-gray-800 overflow-hidden"
-                  style={{
-                    backgroundImage: `url('${card.backgroundImage}')`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat'
-                  }}
-                >
-                  {/* Elegant overlay with subtle fade */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/40"></div>
-                  
-                  {/* Decorative border */}
-                  <div className="absolute inset-4 border border-white/10 rounded-lg"></div>
-                  
-                  {/* Subtle vignette effect */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-                </div>
+                {/* Dark overlay for better text readability */}
+                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-all duration-500"></div>
                 
-                {/* Text Section */}
-                <div className="w-full lg:w-3/5 flex flex-col justify-center p-8 sm:p-12 lg:p-16 bg-gradient-to-br from-slate-900/50 to-black/80 backdrop-blur-sm">
-                  <div className="max-w-2xl">
-                    {/* Decorative element */}
-                    <div className="w-16 h-0.5 bg-gradient-to-r from-red-900 to-transparent mb-8"></div>
-                    
-                    <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 sm:mb-8 font-luxury-display leading-tight">
-                      {card.title}
-                    </h3>
-                    
-                    <p className="text-lg sm:text-xl text-white/90 leading-relaxed font-luxury-body">
-                      {card.description}
-                    </p>
-                    
-                    {/* Bottom decorative element */}
-                    <div className="w-12 h-0.5 bg-gradient-to-r from-transparent to-red-900 mt-8"></div>
-                  </div>
+                {/* Text Content - Positioned at bottom */}
+                <div className="relative z-10 h-full flex flex-col justify-end items-center text-center p-8">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 font-luxury-display group-hover:text-red-300 transition-colors duration-300">
+                    {card.title}
+                  </h3>
+                  
+                  <p className="text-white/90 leading-relaxed font-luxury-body text-lg max-w-sm">
+                    {card.description}
+                  </p>
+                  
+                  {/* Decorative line */}
+                  <div className="w-16 h-1 bg-gradient-to-r from-transparent via-red-900 to-transparent mt-8"></div>
                 </div>
               </motion.div>
             ))}

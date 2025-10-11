@@ -63,6 +63,10 @@ export default function RootLayout({
       <head>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="alternate icon" type="image/svg+xml" href="/favicon.svg" />
+        {/* Preload critical images for instant loading */}
+        <link rel="preload" as="image" href="/features/pexels-brett-sayles-2606383.jpg" />
+        <link rel="preload" as="image" href="/features/pexels-pixabay-358530.jpg" />
+        <link rel="preload" as="image" href="/features/pexels-sevenstormphotography-443383.jpg" />
       </head>
       <body className={`${heebo.className} antialiased`}>
         {children}

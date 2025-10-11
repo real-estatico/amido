@@ -13,8 +13,8 @@ const Logo: React.FC<LogoProps> = ({ className = '', size = 'md' }) => {
   };
 
   return (
-    <div className={`font-luxury-display text-white tracking-wider ${sizeClasses[size]} ${className}`}>
-      AMIDO
+    <div className={`font-bold text-white tracking-wider ${sizeClasses[size]} ${className}`} style={{ fontFamily: 'Georgia, serif' }}>
+      AMIDO <span className="text-red-900">GROUP</span>
     </div>
   );
 };
