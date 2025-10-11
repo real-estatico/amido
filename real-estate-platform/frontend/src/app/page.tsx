@@ -432,19 +432,19 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: false, amount: 0.1 }}
             variants={staggerContainer}
-            className="space-y-16 max-w-6xl mx-auto"
+            className="space-y-24 max-w-7xl mx-auto"
           >
             {featuresCards.map((card, index) => (
               <motion.div 
                 key={index}
                 variants={staggerItem}
-                className={`flex flex-col lg:flex-row items-center min-h-[300px] sm:min-h-[350px] lg:min-h-[400px] gap-8 lg:gap-16 ${
+                className={`flex flex-col lg:flex-row items-stretch min-h-[500px] lg:min-h-[600px] ${
                   index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
                 }`}
               >
                 {/* Image Section */}
                 <div 
-                  className="relative w-full lg:w-1/2 h-[250px] sm:h-[300px] lg:h-[400px] bg-cover bg-center bg-no-repeat bg-gray-800"
+                  className="relative w-full lg:w-2/5 h-[300px] sm:h-[400px] lg:h-full bg-cover bg-center bg-no-repeat bg-gray-800 overflow-hidden"
                   style={{
                     backgroundImage: `url('${card.backgroundImage}')`,
                     backgroundSize: 'cover',
@@ -452,24 +452,33 @@ export default function Home() {
                     backgroundRepeat: 'no-repeat'
                   }}
                 >
-                  {/* Fade effect to background */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/30 to-black/60"
-                    style={{
-                      background: index % 2 === 0 
-                        ? 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.2) 30%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0.7) 100%)'
-                        : 'linear-gradient(to left, transparent 0%, rgba(0,0,0,0.2) 30%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0.7) 100%)'
-                    }}
-                  ></div>
+                  {/* Elegant overlay with subtle fade */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/40"></div>
+                  
+                  {/* Decorative border */}
+                  <div className="absolute inset-4 border border-white/10 rounded-lg"></div>
+                  
+                  {/* Subtle vignette effect */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
                 </div>
                 
                 {/* Text Section */}
-                <div className="w-full lg:w-1/2 p-6 sm:p-8 lg:p-12 bg-black flex flex-col justify-center">
-                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
-                    {card.title}
-                  </h3>
-                  <p className="text-base sm:text-lg text-white/90 leading-relaxed">
-                    {card.description}
-                  </p>
+                <div className="w-full lg:w-3/5 flex flex-col justify-center p-8 sm:p-12 lg:p-16 bg-gradient-to-br from-slate-900/50 to-black/80 backdrop-blur-sm">
+                  <div className="max-w-2xl">
+                    {/* Decorative element */}
+                    <div className="w-16 h-0.5 bg-gradient-to-r from-red-900 to-transparent mb-8"></div>
+                    
+                    <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 sm:mb-8 font-luxury-display leading-tight">
+                      {card.title}
+                    </h3>
+                    
+                    <p className="text-lg sm:text-xl text-white/90 leading-relaxed font-luxury-body">
+                      {card.description}
+                    </p>
+                    
+                    {/* Bottom decorative element */}
+                    <div className="w-12 h-0.5 bg-gradient-to-r from-transparent to-red-900 mt-8"></div>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -542,13 +551,13 @@ export default function Home() {
             className="text-center mb-20"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-luxury-display">
-              הפתרון שלנו
+              היתרון שלנו
             </h2>
             <div className="w-32 h-1 mx-auto mb-6" style={{
               background: 'linear-gradient(to right, transparent 0%, #991b1b 20%, #991b1b 80%, transparent 100%)'
             }}></div>
             <p className="text-xl text-white/90">
-              איך אנחנו פותרים את אתגרי השקעות הנדלן ומביאים פתרונות אמיתיים
+              מה היתרונות שלנו בתחום השקעות הנדלן
             </p>
           </motion.div>
           
